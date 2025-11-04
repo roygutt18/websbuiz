@@ -1290,5 +1290,10 @@ textarea {
   transform: translateX(0);
 }
 
+section {
+  scroll-margin-top: 80px; /* גובה ה-navbar */
+}
+
+
 
 
