@@ -1289,21 +1289,4 @@ textarea {
   transform: translateX(0);
 }
 
-section, .pricing-card, .contact-section, .faq-section, .about-container, .services-container {
-  position: relative; /* יוצר stacking context */
-  z-index: 1; /* מתחת ל-navbar וה-overlay */
-}
-
-.navbar {
-  z-index: 1200; /* תמיד מעל */
-}
-
-.nav-links {
-  z-index: 1100; /* מעל התוכן */
-}
-
-.overlay {
-  z-index: 1050; /* מתחת ל-nav-links, מעל התוכן */
-}
-
 
