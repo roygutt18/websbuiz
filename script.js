@@ -12,6 +12,14 @@ overlay.addEventListener('click', () => {
   overlay.classList.remove('active');
 });
 
+document.querySelectorAll('.nav-links a').forEach(link => {
+  link.addEventListener('click', () => {
+    navLinks.classList.remove('active');
+    overlay.classList.remove('active');
+  });
+});
+
+
 
 const canvas = document.getElementById('particleCanvas');
 const ctx = canvas.getContext('2d');
@@ -115,3 +123,4 @@ const observer = new IntersectionObserver((entries) => {
 }, { threshold: 0.2 });
 
 animatedElements.forEach(el => observer.observe(el));
+
