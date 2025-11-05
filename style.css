@@ -5,10 +5,6 @@
   font-family: 'Segoe UI', sans-serif;
 }
 
-section {
-  margin: auto;
-}
-
 html {
   scroll-behavior: smooth;
 }
@@ -1308,6 +1304,7 @@ textarea {
   opacity: 1;
   transform: translateX(0);
 }
+
 
 
 
