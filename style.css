@@ -981,7 +981,7 @@ textarea {
   }
 
   .hero h1 {
-    font-size: 2rem;
+    font-size: 2.4rem;
     line-height: 1.25;
   }
 
@@ -993,20 +993,20 @@ textarea {
   .hero-buttons {
     display: flex;
     flex-wrap: wrap;
-    gap: 12px;
+    gap: 8px;
     align-items: center;
   }
 
   .btn.primary,.btn.secondary {
-    padding: 10px 22px;
-    font-size: 0.85rem;
-    width: 150px;
+    padding: 8px 18px;
+    font-size: 0.75rem;
+    width: 120px;
     text-align: center;
   }
 
   /* ABOUT US LIGHT */
   .about-us-light-header h2 {
-    font-size: 2rem;
+    font-size: 2.4rem;
   }
 
   .about-us-light-header-line {
@@ -1308,6 +1308,7 @@ textarea {
   opacity: 1;
   transform: translateX(0);
 }
+
 
 
 
