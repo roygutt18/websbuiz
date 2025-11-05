@@ -1242,6 +1242,22 @@ textarea {
     line-height: 1.5;
     margin: 12px 0;
   }
+  /* התפריט צריך להיות עליון */
+  .nav-links {
+      z-index: 2000 !important;
+  }
+  
+  /* ההמבורגר תמיד מעל הכול */
+  .hamburger {
+      z-index: 3000 !important;
+  }
+  
+  /* ה-overlay תמיד צריך להיות מתחת לתפריט */
+  .overlay {
+      z-index: 1000 !important;
+      pointer-events: auto; /* חובה */
+  }
+
 }
 
 /* אנימציות כניסה עם גלילה */
@@ -1288,6 +1304,7 @@ textarea {
   opacity: 1;
   transform: translateX(0);
 }
+
 
 
 
