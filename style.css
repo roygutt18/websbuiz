@@ -10,7 +10,7 @@ html {
 }
 
 /* ============================= */
-/* NAVBAR – CLEAN & RESPONSIVE */
+/* NAVBAR – CLEAN & RESPONSIVE   */
 /* ============================= */
 .navbar {
   position: fixed;
@@ -66,6 +66,68 @@ html {
   background: #000000;
   border-radius: 2px;
   transition: all 0.3s ease;
+}
+
+/* ============================= */
+/* MOBILE RESPONSIVE */
+@media (max-width: 780px) {
+  .hamburger {
+    display: flex;
+    z-index: 1200;
+  }
+
+  .nav-links {
+    position: fixed;
+    top: 0;
+    left: -250px; /* נסתר בתחילה */
+    width: 250px;
+    height: 100vh;
+    background: rgba(255, 255, 255, 0.95);
+    flex-direction: column;
+    justify-content: center;
+    gap: 15px;
+    box-shadow: -2px 0 12px rgba(0,0,0,0.1);
+    transition: left 0.3s ease;
+    z-index: 1100;
+    direction: rtl;
+    padding-left: 20px;
+  }
+
+  .nav-links a {
+    font-size: 1rem;
+    padding: 15px 20px;
+    color: #000000;
+    font-weight: 600;
+    border-radius: 8px;
+    transition: 0.25s ease;
+  }
+
+  .nav-links a:hover {
+    background: rgba(0,0,0,0.05);
+  }
+
+  .nav-links.active {
+    left: 0; /* מופיע */
+  }
+
+  /* Overlay */
+  .overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.1);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease;
+    z-index: 100;
+  }
+
+  .overlay.active {
+    opacity: 1;
+    visibility: visible;
+  }
 }
 
 /* Particle canvas */
@@ -903,64 +965,6 @@ textarea {
 /* RESPONSIVE – UP TO 780PX      */
 /* ============================= */
 @media (max-width: 780px) {
-    .hamburger {
-    display: flex;
-    z-index: 1200;
-  }
-
-  .nav-links {
-    position: fixed;
-    top: 0;
-    left: -250px;
-    width: 250px;
-    height: 100vh;
-    background: rgb(255, 255, 255); /* לבן שקוף */
-    flex-direction: column;
-    justify-content: center;
-    gap: 10px;
-    box-shadow: -2px 0 12px rgba(0,0,0,0.1);
-    transition: left 0.3s ease;
-    z-index: 1100;
-    direction: rtl;
-  }
-
-  .nav-links a {
-    font-size: 0.8rem;
-    padding: 15px 25px;
-    color: #000000; /* שחור */
-    font-weight: 600;
-    border-radius: 8px;
-    transition: 0.25s ease;
-  }
-
-  .nav-links a:hover {
-    color: #000000; /* נשאר שחור */
-    background: rgba(0,0,0,0.05); /* הדגשה קלה עם רקע שחור מאוד שקוף */
-  }
-
-  .nav-links.active {
-    left: 0;
-  }
-
-  /* Overlay */
-  .overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0,0,0,0.1); /* חצי שקוף קל */
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity 0.3s ease;
-    z-index: 10; /* מתחת לתפריט */
-  }
-
-  .overlay.active {
-    opacity: 1;
-    visibility: visible;
-  }
-
   /* HERO SECTION */
   .hero {
     height: auto;
@@ -1242,22 +1246,6 @@ textarea {
     line-height: 1.5;
     margin: 12px 0;
   }
-  /* התפריט צריך להיות עליון */
-  .nav-links {
-      z-index: 2000 !important;
-  }
-  
-  /* ההמבורגר תמיד מעל הכול */
-  .hamburger {
-      z-index: 3000 !important;
-  }
-  
-  /* ה-overlay תמיד צריך להיות מתחת לתפריט */
-  .overlay {
-      z-index: 1000 !important;
-      pointer-events: auto; /* חובה */
-  }
-
 }
 
 /* אנימציות כניסה עם גלילה */
@@ -1304,6 +1292,7 @@ textarea {
   opacity: 1;
   transform: translateX(0);
 }
+
 
 
 
