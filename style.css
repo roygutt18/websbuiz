@@ -161,7 +161,7 @@ html {
 }
 
 .hero h1 {
-  font-size: 1rem;
+  font-size: 3rem;
   line-height: 1.15;
   margin-bottom: 25px;
 }
@@ -1291,6 +1291,7 @@ textarea {
   opacity: 1;
   transform: translateX(0);
 }
+
 
 
 
