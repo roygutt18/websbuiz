@@ -82,13 +82,12 @@ html {
     left: -250px; /* נסתר בתחילה */
     width: 250px;
     height: 100vh;
-    background: rgba(255, 255, 255, 0.95);
+    background: rgb(255, 255, 255);
     flex-direction: column;
     justify-content: center;
     gap: 15px;
-    box-shadow: -2px 0 12px rgba(0,0,0,0.1);
     transition: left 0.3s ease;
-    z-index: 1100;
+    z-index: 1100 !important;
     direction: rtl;
     padding-left: 20px;
   }
@@ -121,7 +120,7 @@ html {
     opacity: 0;
     visibility: hidden;
     transition: opacity 0.3s ease;
-    z-index: 100;
+    z-index: 100 !important;
   }
 
   .overlay.active {
@@ -1292,6 +1291,7 @@ textarea {
   opacity: 1;
   transform: translateX(0);
 }
+
 
 
 
