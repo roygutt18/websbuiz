@@ -93,7 +93,7 @@ html {
   }
 
   .nav-links a {
-    font-size: 0.75rem;
+    font-size: 0.9rem;
     padding: 15px 20px;
     color: #000000;
     font-weight: 600;
@@ -156,12 +156,12 @@ html {
   position: relative;
   max-width: 600px;
   color: rgb(0, 0, 0);
-  text-align: left;
+  text-align: right;
   z-index: 2;
 }
 
 .hero h1 {
-  font-size: 3rem;
+  font-size: 4.3rem;
   line-height: 1.15;
   margin-bottom: 25px;
 }
@@ -998,8 +998,8 @@ textarea {
 
   .btn.primary,.btn.secondary {
     padding: 8px 18px;
-    font-size: 0.75rem;
-    width: 120px;
+    font-size: 0.85rem;
+    width: 160px;
     text-align: center;
   }
 
@@ -1291,6 +1291,7 @@ textarea {
   opacity: 1;
   transform: translateX(0);
 }
+
 
 
 
