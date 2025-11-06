@@ -1,3 +1,4 @@
+
 * {
   margin: 0;
   padding: 0;
@@ -173,7 +174,7 @@ html {
 /* ✅ BUTTONS */
 .hero-buttons {
   display: flex;
-  aling-items: center;
+  align-items: center;
   gap: 18px;
   justify-content: center;
 }
@@ -197,7 +198,7 @@ html {
 
 /* Secondary */
 .btn.secondary {
-  background: rgba(19, 90, 157, 0.15);
+  background: rgba(50, 156, 255, 0.15);
   border: 1px solid rgba(0, 81, 255, 0.4);
   color: rgb(9, 30, 63);
   backdrop-filter: blur(6px);
@@ -514,7 +515,7 @@ html {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  text-align: left;
+  text-align: center;
   gap: 25px; /* ריווח בין הכותרת, הפסקה והכפתור */
 }
 
@@ -540,6 +541,7 @@ html {
   font-weight: 700;
   transition: 0.3s ease;
   max-width: fit-content; /* לא נמתח */
+  align-self: center;
 }
 
 .cta-button:hover {
@@ -568,7 +570,7 @@ html {
   height: 45px;
   line-height: 45px;
   border-radius: 50%;
-  background: linear-gradient(rgb(25, 85, 198), rgb(0, 121, 202));
+  background: linear-gradient(rgb(25, 85, 198), rgb(0, 153, 255));
   color: #fff;
   font-weight: 700;
   font-size: 1.3rem;
@@ -1291,23 +1293,3 @@ textarea {
   opacity: 1;
   transform: translateX(0);
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
