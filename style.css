@@ -144,7 +144,7 @@ html {
 .hero {
   height: 100vh;
   display: flex;
-  align-items: center;
+  align-items: right;
   padding-left: 120px;
   padding-top: 140px;
   position: relative;
@@ -1291,6 +1291,7 @@ textarea {
   opacity: 1;
   transform: translateX(0);
 }
+
 
 
 
