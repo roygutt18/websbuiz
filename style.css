@@ -997,7 +997,7 @@ textarea {
   }
 
   .btn.primary,.btn.secondary {
-    padding: 8px 18px;
+    padding: 14px 20px;
     font-size: 0.85rem;
     width: 160px;
     text-align: center;
@@ -1005,7 +1005,7 @@ textarea {
 
   /* ABOUT US LIGHT */
   .about-us-light-header h2 {
-    font-size: 2.4rem;
+    font-size: 2.8rem;
   }
 
   .about-us-light-header-line {
@@ -1083,7 +1083,7 @@ textarea {
   }
 
   .services-title {
-    font-size: 2rem;
+    font-size: 3rem;
   }
 
   .services-subtitle {
@@ -1155,7 +1155,7 @@ textarea {
   }
 
   .how-text h2 {
-    font-size: 2rem;             /* כותרת קטנה יותר */
+    font-size: 3rem;             /* כותרת קטנה יותר */
   }
 
   .how-text p {
@@ -1176,7 +1176,7 @@ textarea {
   }
 
   .pricing-title {
-    font-size: 2rem;
+    font-size: 3rem;
   }
 
   .pricing-subtitle {
@@ -1219,7 +1219,7 @@ textarea {
   }
 
   .faq-title {
-    font-size: 2.2rem; /* כותרת קטנה יותר */
+    font-size: 2.6rem; /* כותרת קטנה יותר */
     margin-bottom: 35px;
   }
 
@@ -1291,6 +1291,7 @@ textarea {
   opacity: 1;
   transform: translateX(0);
 }
+
 
 
 
