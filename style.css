@@ -144,19 +144,17 @@ html {
 .hero {
   height: 100vh;
   display: flex;
-  align-items: right;
-  padding-left: 120px;
-  padding-top: 140px;
+  justify-content: flex-end; /* מעביר לצד ימין */
+  align-items: center; /* מרכז לגובה */
+  padding-right: 120px;
   position: relative;
   z-index: 1;
 }
 
-/* ✅ טקסט שמאלה */
 .hero-content {
-  position: relative;
   max-width: 600px;
   color: rgb(0, 0, 0);
-  text-align: right;
+  text-align: right; /* מיושר לימין */
   z-index: 2;
 }
 
@@ -1291,6 +1289,7 @@ textarea {
   opacity: 1;
   transform: translateX(0);
 }
+
 
 
 
