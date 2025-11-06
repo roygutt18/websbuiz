@@ -173,7 +173,9 @@ html {
 /* ✅ BUTTONS */
 .hero-buttons {
   display: flex;
+  aling-items: center;
   gap: 18px;
+  justify-content: center;
 }
 
 .btn {
@@ -1289,6 +1291,7 @@ textarea {
   opacity: 1;
   transform: translateX(0);
 }
+
 
 
 
