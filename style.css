@@ -997,7 +997,7 @@ textarea {
   }
 
   .btn.primary,.btn.secondary {
-    padding: 14px 20px;
+    padding: 18px 20px;
     font-size: 0.85rem;
     width: 160px;
     text-align: center;
@@ -1291,6 +1291,7 @@ textarea {
   opacity: 1;
   transform: translateX(0);
 }
+
 
 
 
