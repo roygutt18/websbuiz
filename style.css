@@ -144,7 +144,7 @@ html {
 .hero {
   height: 100vh;
   display: flex;
-  justify-content: flex-end; /* מעביר לצד ימין */
+  justify-content: center; /* מעביר לצד ימין */
   align-items: center; /* מרכז לגובה */
   padding-right: 120px;
   position: relative;
@@ -154,7 +154,7 @@ html {
 .hero-content {
   max-width: 600px;
   color: rgb(0, 0, 0);
-  text-align: right; /* מיושר לימין */
+  text-align: center; /* מיושר לימין */
   z-index: 2;
 }
 
@@ -1289,6 +1289,7 @@ textarea {
   opacity: 1;
   transform: translateX(0);
 }
+
 
 
 
