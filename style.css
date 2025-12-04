@@ -899,13 +899,18 @@ html {
 
 /* ---------------- CARD --------------- */
 .project-card{
-  display:grid;
-  grid-template-columns: 1.15fr 1fr;
+  display: flex;
+  flex-direction: column;
   gap:40px;
   background:#fff;
   border-radius:var(--radius);
   padding:34px;
   box-shadow:var(--shadow);
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  width: fit-content;
+  margin: auto;
 }
 
 /* MEDIA */
@@ -917,8 +922,8 @@ html {
 
 .project-image{
   display:block;
-  width:100%;
-  height:100%;
+  width:300px;
+  height:auto;
   object-fit:cover;
 }
 
@@ -961,6 +966,8 @@ html {
   display:flex;
   gap:12px;
   flex-wrap:wrap;
+  align-items: center;
+  justify-content: center;
 }
 
 .tag{
@@ -977,6 +984,7 @@ html {
   margin-top:26px;
   display:flex;
   gap:12px;
+  justify-content: center;
 }
 
 .btn{
