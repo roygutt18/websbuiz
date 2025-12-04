@@ -12,14 +12,6 @@ overlay.addEventListener('click', () => {
   overlay.classList.remove('active');
 });
 
-document.querySelectorAll('.nav-links a').forEach(link => {
-  link.addEventListener('click', () => {
-    navLinks.classList.remove('active');
-    overlay.classList.remove('active');
-  });
-});
-
-
 
 const canvas = document.getElementById('particleCanvas');
 const ctx = canvas.getContext('2d');
@@ -123,4 +115,87 @@ const observer = new IntersectionObserver((entries) => {
 }, { threshold: 0.2 });
 
 animatedElements.forEach(el => observer.observe(el));
+
+
+(function(){
+
+  const modal = document.getElementById("videoModal");
+  const video = document.getElementById("recommendationVideo");
+  const openBtns = document.querySelectorAll("#openVideoBtn, #openVideoBtn2");
+  const closeBtn = document.getElementById("closeVideoBtn");
+
+  if(!modal || !video) return;
+
+  function openModal(){
+    modal.classList.add("show");
+    video.currentTime = 0;
+    video.play().catch(()=>{});
+    document.documentElement.style.overflow = "hidden";
+  }
+
+  function closeModal(){
+    modal.classList.remove("show");
+    video.pause();
+    document.documentElement.style.overflow = "";
+  }
+
+  openBtns.forEach(btn =>{
+    btn.addEventListener("click", e=>{
+      e.preventDefault();
+      openModal();
+    });
+  });
+
+  closeBtn.addEventListener("click", closeModal);
+
+  modal.addEventListener("click", e=>{
+    if(e.target === modal) closeModal();
+  });
+
+  document.addEventListener("keydown", e=>{
+    if(e.key === "Escape") closeModal();
+  });
+
+})();
+
+const items1 = document.querySelectorAll(".timeline-item");
+const line = document.querySelector(".timeline-line");
+const circles = document.querySelectorAll(".timeline-circle");
+
+function updateTimeline() {
+  const viewportHeight = window.innerHeight;
+  const firstRect = items1[0].getBoundingClientRect();
+  let maxHeight = 0;
+
+  items1.forEach((item, index) => {
+    const rect = item.getBoundingClientRect();
+    const reached = rect.top < viewportHeight * 0.7;
+
+    if (reached) {
+      circles[index].classList.add("filled");
+      const distance = rect.bottom - firstRect.top;
+      if (distance > maxHeight) maxHeight = distance;
+    } else {
+      circles[index].classList.remove("filled");
+    }
+  });
+
+  // עדכון הקו לפי האיטם האחרון של הטיימליין בלבד
+  const lastRect = items1[items1.length - 1].getBoundingClientRect();
+  if (lastRect.top < viewportHeight * 0.6) {
+    const distanceToLast = lastRect.bottom - firstRect.top;
+    if (distanceToLast > maxHeight) maxHeight = distanceToLast;
+  }
+
+  // אם כל הסקשן עוד לא נכנס למסך
+  if (firstRect.top > viewportHeight * 0.6) {
+    line.style.height = "0px";
+    return;
+  }
+
+  line.style.height = maxHeight + "px";
+}
+
+window.addEventListener("scroll", updateTimeline);
+updateTimeline();
 
