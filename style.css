@@ -485,131 +485,187 @@ html {
 
 
 
-/*---------------------*/
-/*HOW IT WORKS SECTION*/
-/*-------------------*/
-.how-it-works {
-  padding: 140px 20px; /* יותר ריווחים למעלה ולמטה */
+/* SECTION BASE */
+.timeline-section {
+  padding: 150px 20px;
+  font-family: "Segoe UI";
 }
 
-.how-it-works .container {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 60px;
-  max-width: 1200px;
+/* HEADER */
+.timeline-header {
+  max-width: 800px;
+  text-align: center;
+  margin: 0 auto 90px;
+}
+
+.timeline-header h2 {
+  font-size: 3.8rem;
+  font-weight: 800;
+  margin-bottom: 20px;
+}
+
+.timeline-header p {
+  font-size: 1.25rem;
+  color: #555;
+  line-height: 1.8;
+}
+
+
+
+/* TIMELINE BASE STRUCTURE */
+.timeline-container {
+  position: relative;
   margin: 0 auto;
+  max-width: 900px;
 }
 
-/* LEFT SIDE – GRID */
-.how-steps {
-  flex: 1 1 600px;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 40px;
+.timeline-line {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 6px;
+  height: 0;           /* יתמלא עם JS */
+  background: #0f62ff;
+  border-radius: 20px;
+  transition: height 0.4s ease;
 }
 
-/* RIGHT SIDE – TEXT */
-.how-text {
-  flex: 1 1 350px;
+
+
+/* ITEM */
+.timeline-item {
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
-  text-align: center;
-  gap: 25px; /* ריווח בין הכותרת, הפסקה והכפתור */
+  align-items: center;
+  margin-bottom: 120px;
+  position: relative;
 }
 
-.how-text h2 {
-  font-size: 4rem; /* כותרת גדולה יותר */
-  margin-bottom: 15px;
-  font-weight: 800;
-  font-family: 'Segoe UI';
-}
 
-.how-text p {
-  font-size: 1.15rem;
-  line-height: 1.8;
-  color: #555;
-}
 
-.cta-button {
-  display: inline-block; /* לא יימתח */
-  background: #0f62ff;
-  color: #fff;
-  text-decoration: none;
-  padding: 14px 30px;
-  border-radius: 8px;
-  font-weight: 700;
-  transition: 0.3s ease;
-  max-width: fit-content; /* לא נמתח */
-  align-self: center;
-}
-
-.cta-button:hover {
-  background: #084bb0;
-}
-
-/* STEP CARD */
-.step {
-  background: #fff;
-  padding: 30px 20px;
-  border-radius: 20px;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
-  transform: translateY(50px);
-  opacity: 0;
-  transition: all 0.8s ease;
-  text-align: center;
-}
-
-.step.show {
-  transform: translateY(0);
-  opacity: 1;
-}
-
-.step-number {
-  width: 45px;
-  height: 45px;
-  border-radius: 10px;
-
-  background: linear-gradient(145deg, rgb(0, 110, 255), rgb(0, 70, 200)); /* כחול שקוף ועדין */
-  color: #ffffff;
-  font-weight: 700;
-  font-size: 1.3rem;
-
+/* CIRCLE IN THE CENTER */
+.timeline-circle {
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  background: white;
+  border: 5px solid #d7e3ff;
   display: flex;
   justify-content: center;
   align-items: center;
 
-  margin: 0 auto 15px;
+  color: #0f62ff;
+  font-weight: 800;
+  font-size: 1.3rem;
 
-  /* בלי הובר, בלי אנימציות, בלי צל כבד */
+  position: relative;
+  z-index: 10;
+
+  transition: all 0.35s ease;
+}
+
+.timeline-circle.filled {
+  background: #0f62ff;
+  color: #fff;
+  border-color: #0f62ff;
 }
 
 
-.works-icon {
-  font-size: 40px;
-  color: #0a4cff;   /* אתה יכול לבחור צבע אחר */
-  margin-bottom: 18px;
+
+/* CONTENT CARD */
+.timeline-content {
+  background: #ffffff;
+  padding: 35px 40px;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.07);
+  margin-top: 30px;
+  text-align: center;
+  max-width: 450px;
+}
+
+.timeline-content h3 {
+  font-size: 1.7rem;
+  font-weight: 800;
+  margin-bottom: 12px;
+}
+
+.timeline-content p {
+  font-size: 1.05rem;
+  color: #555;
+  line-height: 1.7;
 }
 
 
-.step h3 {
-  font-size: 1.25rem;
-  margin-bottom: 10px;
+
+/* TAGS */
+.tags {
+  margin-top: 18px;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.tag {
+  background: #e7eeff;
+  color: #0f62ff;
+  padding: 6px 14px;
+  border-radius: 10px;
+  font-size: 0.9rem;
   font-weight: 700;
 }
 
-.step p {
-  font-size: 0.95rem;
-  color: #555;
-  line-height: 1.5;
+.tag.blue {
+  background: #d7e3ff;
 }
 
-/* Hover Effect */
-.step:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+.tag.green {
+  background: #dfffe2;
+  color: #1c8d34;
 }
 
+.tag.red {
+  background-color: rgb(255, 232, 232);
+  color: red;
+}
+
+.tag.orange {
+  background-color: rgb(255, 247, 231);
+  color: rgb(255, 183, 0);
+}
+
+.tag.black {
+  color: black;
+  background-color: #e9e9e9;
+}
+
+.timeline-line {
+  transition: height 0.35s ease;
+}
+.timeline-circle {
+  transition: background 0.3s ease, color 0.3s ease, border-color 0.3s ease, transform 0.25s ease;
+}
+.timeline-circle.filled {
+  transform: scale(1.06);
+}
+
+
+
+/* LINK */
+.timeline-link {
+  display: inline-block;
+  margin-top: 18px;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #0f62ff;
+  text-decoration: none;
+  border-bottom: 2px solid transparent;
+  transition: 0.3s ease;
+}
+
+.timeline-link:hover {
+  border-color: #0f62ff;
+}
 
 /* ============================= */
 /* PRICING SECTION – CLEAN RTL */
@@ -756,7 +812,7 @@ html {
 
 /* מחיר ישן */
 .old-price {
-  font-size: 24px;    /* כמו שהיה לך קודם */
+  font-size: 20px;    /* כמו שהיה לך קודם */
   color: #a3a3a3;
   text-decoration: line-through;
   font-weight: 700;   /* אותו פונט וייט */
@@ -783,6 +839,317 @@ html {
   font-weight: 700;      /* אותו משקל */
   color: #2a6df4;        /* כחול כמו שסגננת קודם */
 }
+
+
+
+:root{
+  --accent: #0f62fe;
+  --accent-dark: #0030c9;
+  --text: #0d0d0d;
+  --muted: #5f6a7a;
+  --bg: #ffffff;
+  --radius: 14px;
+  --shadow: 0 18px 35px rgba(0,0,0,0.08);
+
+  font-family: "Inter", sans-serif;
+}
+
+.projects-section{
+  padding: 90px 20px;
+}
+
+.container{
+  max-width:1150px;
+  margin:auto;
+}
+
+/* ---------------- TITLE --------------- */
+
+.section-header{
+  text-align:center;
+  margin-bottom:55px;
+}
+
+.section-label{
+  display:inline-block;
+  padding:7px 18px;
+  font-size:13px;
+  font-weight:700;
+  letter-spacing:1px;
+  border-radius:999px;
+  background:rgba(15,98,254,0.12);
+  color:var(--accent);
+}
+
+.section-title{
+  font-size:42px;
+  font-weight:800;
+  margin:18px 0 12px 0;
+  letter-spacing:-1px;
+  color:var(--text);
+}
+
+.section-underline{
+  width:95px;
+  height:4px;
+  background:linear-gradient(90deg,var(--accent),var(--accent-dark));
+  margin:0 auto;
+  border-radius:999px;
+}
+
+/* ---------------- CARD --------------- */
+.project-card{
+  display:grid;
+  grid-template-columns: 1.15fr 1fr;
+  gap:40px;
+  background:#fff;
+  border-radius:var(--radius);
+  padding:34px;
+  box-shadow:var(--shadow);
+}
+
+/* MEDIA */
+.project-media{
+  border-radius:var(--radius);
+  overflow:hidden;
+  position:relative;
+}
+
+.project-image{
+  display:block;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+
+.play-btn{
+  position:absolute;
+  top: 10px;
+  right: 10px;
+  width:65px;
+  height:65px;
+  font-size:26px;
+  background: rgba(0, 89, 255, 0.221);
+  border: 2px solid #0059ff;
+  border-radius:50%;
+  color:white;
+  cursor:pointer;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  box-shadow:0 14px 25px rgba(15,98,254,0.25);
+  transition:0.2s ease;
+}
+.play-btn:hover{ transform:scale(1.08); }
+
+/* INFO */
+.project-title{
+  font-size:26px;
+  font-weight:700;
+  margin:0;
+}
+
+.project-description{
+  margin-top:12px;
+  color:var(--muted);
+  line-height:1.65;
+}
+
+/* TAGS */
+.project-tags{
+  margin-top:18px;
+  display:flex;
+  gap:12px;
+  flex-wrap:wrap;
+}
+
+.tag{
+  padding:7px 14px;
+  background:#eef3ff;
+  color:#0641d8;
+  border-radius:999px;
+  font-size:13px;
+  font-weight:600;
+}
+
+/* BUTTONS */
+.project-actions{
+  margin-top:26px;
+  display:flex;
+  gap:12px;
+}
+
+.btn{
+  padding:12px 18px;
+  border-radius:12px;
+  font-size:15px;
+  font-weight:600;
+  cursor:pointer;
+}
+
+.btn-primary1{
+  background:linear-gradient(90deg,var(--accent),var(--accent-dark));
+  border:none;
+  color:white;
+  text-decoration:none;
+  box-shadow:0 12px 28px rgba(15,62,255,0.22);
+}
+
+.btn-outline{
+  background:white;
+  color:var(--accent-dark);
+  border:2px solid var(--accent);
+}
+
+/* ---------------- FULL WIDTH VIDEO MODAL ---------------- */
+
+.video-modal{
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,0.65);
+  display:none;
+  align-items:center;
+  justify-content:center;
+  z-index:2000;
+  backdrop-filter: blur(3px);
+}
+
+.video-modal.show{
+  display:flex;
+}
+
+.video-center{
+  position:relative;
+  width:20%;
+  max-width:800px;
+}
+
+.recommendation-video{
+  width:100%;
+  height:auto;
+  border-radius:14px;
+}
+
+/* BIG CLEAR CLOSE BUTTON */
+.modal-close{
+  position:absolute;
+  top:-50px;
+  right:0;
+  width:45px;
+  height:45px;
+  background:var(--accent);
+  border:none;
+  color:white;
+  font-size:26px;
+  border-radius:50%;
+  cursor:pointer;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  box-shadow:0 8px 20px rgba(15,98,254,0.4);
+  transition:0.15s ease;
+}
+.modal-close:hover{ transform:scale(1.12); }
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+
+  /* מרווחים כלליים */
+  .projects-section {
+    padding: 60px 16px;
+  }
+
+  /* טייטל */
+  .section-title {
+    font-size: 32px;
+    line-height: 1.2;
+  }
+  .section-label {
+    font-size: 12px;
+    padding: 6px 14px;
+  }
+
+  /* כרטיס הפרויקט */
+  .project-card {
+    grid-template-columns: 1fr;
+    padding: 22px;
+    gap: 22px;
+    border-radius: 18px;
+  }
+
+  /* מדיה — תצוגה יפה יותר */
+  .project-media {
+    border-radius: 18px;
+  }
+
+  /* כפתור פליי גדול ונגיש */
+  .play-btn {
+    width: 60px;
+    height: 60px;
+    font-size: 24px;
+    right: 14px;
+    top: 14px;
+  }
+
+  /* טקסטים */
+  .project-title {
+    font-size: 22px;
+  }
+
+  .project-description {
+    font-size: 15px;
+    line-height: 1.65;
+  }
+
+  /* טאגים */
+  .tag {
+    font-size: 12px;
+    padding: 6px 12px;
+  }
+
+  /* כפתורים */
+  .project-actions {
+    flex-direction: column;
+    gap: 10px;
+  }
+  .btn {
+    width: 100%;
+    padding: 14px;
+    text-align: center;
+    font-size: 16px;
+  }
+
+  /* =========================== */
+  /* VIDEO MODAL — BIG FIX       */
+  /* =========================== */
+
+  .video-modal {
+    align-items: flex-start; /* שלא יחתך */
+    padding-top: 90px;
+  }
+
+  .video-center {
+    width: 55% !important;   /* רוחב מלא כמעט */
+    max-width: none;
+  }
+
+  .recommendation-video {
+    width: 100%;
+    border-radius: 14px;
+  }
+
+  /* כפתור X מותאם בצורה מקצועית */
+  .modal-close {
+    top: -55px;
+    right: -5px;
+    width: 42px;
+    height: 42px;
+    font-size: 22px;
+    background: var(--accent);
+    box-shadow: 0 10px 25px rgba(0,60,255,0.35);
+  }
+}
+
 
 /* ================================ */
 /* FAQ SECTION – RTL & MODERN STYLE */
@@ -1121,8 +1488,7 @@ textarea {
 
   /* FACT HIGHLIGHT */
   .highlight-inner {
-    padding-left: 15px;
-    font-size: 1.1rem;
+    font-size: 1rem;
   }
 
   /* SERVICES */
