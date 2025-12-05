@@ -1535,7 +1535,7 @@ textarea {
   }
 
   .hero-content {
-    max-width: 95%;
+    max-width: 100%;
     margin: auto;
   }
 
@@ -1553,13 +1553,16 @@ textarea {
     display: flex;
     gap: 8px;
     align-items: center;
+    flex-wrap: nowrap;
   }
 
   .btn.primary,.btn.secondary {
     padding: 12px 26px;
     font-size: 0.8rem;
-    width: 180px;
     text-align: center;
+    white-space: nowrap;
+    width: max-content;
+    height: 40px;
   }
 
   /* ABOUT US LIGHT */
