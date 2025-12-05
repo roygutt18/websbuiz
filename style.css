@@ -141,243 +141,379 @@ html {
 }
 
 
-/* ✅ HERO */
+/* =========================================
+   HERO – רקע שקוף (דף לבן מאחור)
+========================================= */
 .hero {
   height: 100vh;
   display: flex;
-  justify-content: center; /* מעביר לצד ימין */
-  align-items: center; /* מרכז לגובה */
+  justify-content: center;
+  align-items: center;
+  background: transparent;
   position: relative;
-  z-index: 1;
+  overflow: visible;
 }
 
+/* =========================================
+   HERO CONTENT
+========================================= */
 .hero-content {
   max-width: 800px;
-  color: rgb(0, 0, 0);
-  text-align: center; /* מיושר לימין */
+  text-align: center;
+  color: #0a1a2f; /* כחול כהה על רקע לבן */
+  position: relative;
   z-index: 2;
+  padding: 20px;
 }
 
+/* =========================================
+   TITLES – גרדיאנט כחול כהה הולך ובא
+========================================= */
 .hero h1 {
   font-size: 5rem;
-  line-height: 1.15;
-  margin-bottom: 25px;
+  margin-bottom: 20px;
+  background: linear-gradient(90deg, #002b5c, #007aff, #003a70);
+  -webkit-background-clip: text;
+  color: transparent;
+  background-size: 200%;
+  animation: titleFlow 4.5s ease-in-out infinite;
 }
 
+@keyframes titleFlow {
+  0% { background-position: 0%; }
+  100% { background-position: 200%; }
+}
+
+/* =========================================
+   SUBTEXT
+========================================= */
 .hero p {
-  font-size: 1.25rem;
-  opacity: 0.92;
-  margin-bottom: 35px;
+  font-size: 1.3rem;
+  opacity: 0.85;
+  margin-bottom: 40px;
 }
 
-/* ✅ BUTTONS */
+/* =========================================
+   כלל כפתורים – בסיס מתקדם
+========================================= */
 .hero-buttons {
   display: flex;
+  gap: 30px;
   align-items: center;
-  gap: 18px;
   justify-content: center;
 }
 
 .btn {
-  padding: 13px 36px;
+  padding: 15px 44px;
   border-radius: 40px;
-  font-size: 1.1rem;
+  font-size: 1.15rem;
+  font-weight: 600;
   text-decoration: none;
-  transition: 0.3s;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  user-select: none;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.35s cubic-bezier(.25,.65,.45,1);
+  transform-style: preserve-3d;
 }
 
-/* Primary */
+/* =========================================
+   PRIMARY – גרדיאנט טכנולוגי + עומק
+========================================= */
 .btn.primary {
-  background: #1156bd;
-  color: white;
-}
-.btn.primary:hover {
-  background: #0953a1;
+  background: linear-gradient(135deg, #006CFF, #0048A5, #003577);
+  color: #ffffff;
+  box-shadow: 0 7px 20px rgba(0, 110, 255, 0.30);
+  border: none;
 }
 
-/* Secondary */
+/* 🔵 אפקט היילייט צד יוקרתי */
+.btn.primary::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255,255,255,0.35) 50%,
+    transparent 100%
+  );
+  transform: translateX(-120%);
+  transition: 0.55s ease-in-out;
+}
+
+/* Hover – הכול קורה כאן */
+.btn.primary:hover {
+  transform: scale(1.08) translateY(-3px);
+  box-shadow:
+    0 14px 40px rgba(0, 110, 255, 0.55),
+    0 0 35px rgba(0, 160, 255, 0.45);
+  background-position: 120% center;
+}
+
+/* היילייט מחליק פנימה */
+.btn.primary:hover::before {
+  transform: translateX(120%);
+}
+
+/* =========================================
+   SECONDARY – גלאס טכנולוגי + ניאון עדין
+========================================= */
 .btn.secondary {
-  background: rgba(50, 156, 255, 0.15);
-  border: 1px solid rgba(0, 81, 255, 0.4);
-  color: rgb(9, 30, 63);
-  backdrop-filter: blur(6px);
+  background: rgba(0, 80, 160, 0.10);
+  border: 2px solid rgba(0, 120, 255, 0.35);
+  color: #003366;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 8px 20px rgba(0,50,130,0.15);
+  position: relative;
 }
+
+/* ניאון צדדי רך */
+.btn.secondary::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: linear-gradient(
+    135deg,
+    rgba(0,120,255,0.2),
+    transparent 60%
+  );
+  opacity: 0;
+  transition: 0.45s ease;
+}
+
+/* Hover – עומק + ניאון */
 .btn.secondary:hover {
-  background: rgba(255,255,255,0.28);
+  transform: scale(1.07) translateY(-3px);
+  box-shadow: 
+    0 14px 38px rgba(0, 80, 160, 0.28),
+    0 0 20px rgba(0, 150, 255, 0.35);
+  border-color: rgba(0, 140, 255, 0.65);
 }
+
+.btn.secondary:hover::before {
+  opacity: 1;
+}
+
+/* =========================================
+   אפקט קליק – Ripple לבן עדין
+========================================= */
+.btn:active::after {
+  content: "";
+  position: absolute;
+  width: 170%;
+  height: 170%;
+  background: rgba(255, 255, 255, 0.35);
+  border-radius: 50%;
+  transform: scale(0);
+  animation: rippleNew 0.45s ease-out;
+  z-index: 1;
+}
+
+@keyframes rippleNew {
+  to { transform: scale(1); opacity: 0; }
+}
+
+
+
 
 /* ============================= */
-/* ABOUT SECTION – MODERN HEBREW */
+/* ABOUT SECTION – Clean Premium */
 /* ============================= */
 
 .about-section {
-  padding: 100px 20px;
+  padding: 110px 20px;
   font-family: 'Segoe UI', sans-serif;
-  color: #1a1a1a;
+  color: #0f1a2d;
+  background: transparent;
 }
 
 .about-container {
   max-width: 1100px;
   margin: auto;
-  direction: rtl; /* לטקסט בעברית */
+  direction: rtl;
 }
 
-/* HEADER */
+/* ============================= */
+/* HEADER – נקי, מודרני וחד */
+/* ============================= */
+
 .about-header {
   text-align: center;
   margin-bottom: 70px;
 }
 
 .about-header h2 {
-  font-size: 4rem;
+  font-size: 4rem;     /* קטן יותר */
   font-weight: 800;
-  color: #26479b;
-  margin-bottom: 10px;
+  letter-spacing: -1px;
+  background: linear-gradient(90deg, #062b56, #1878ff);
+  -webkit-background-clip: text;
+  color: transparent;
+  background-size: 120%;
+  animation: headerFlow 4s ease-in-out infinite;
+}
+
+@keyframes headerFlow {
+  0% { background-position: 0%; }
+  100% { background-position: 160%; }
 }
 
 .about-line {
-  width: 25%;
-  height: 5px;
-  margin: 20px auto 25px;
-  border-radius: 5px;
-  background: linear-gradient(90deg, #2d4ea0, #5a8dfd);
+  width: 14%;
+  height: 4px;
+  margin: 18px auto 25px;
+  border-radius: 8px;
+  background: linear-gradient(90deg, #0048A5, #5fa6ff);
+  opacity: 0.75;
 }
 
 .about-header p {
-  font-size: 1.3rem;
-  color: #3c4a60;
-  max-width: 750px;
+  font-size: 1.15rem;    /* טקסט קטן ונקי */
+  max-width: 700px;
   margin: auto;
-  line-height: 1.8;
-  opacity: 0.95;
+  line-height: 1.75;
+  color: #2f3b50;
+  opacity: 0.9;
 }
 
-/* FEATURES GRID */
+/* ============================= */
+/* FEATURE CARDS – Clean Tech */
+/* ============================= */
+
 .features-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 45px;
+  gap: 40px;
   margin-bottom: 90px;
 }
 
 .feature-card {
   text-align: center;
-  padding: 45px 20px;
-  border-radius: 25px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.07);
-  transition: transform 0.35s ease, box-shadow 0.35s ease;
+  padding: 40px 20px;
+  border-radius: 22px;
   background: #ffffff;
+  box-shadow: 0 8px 22px rgba(0,0,0,0.06);
+  transition: 0.35s ease;
+  position: relative;
 }
 
 .feature-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 20px 50px rgba(0,0,0,0.12);
+  transform: translateY(-8px);
+  box-shadow: 0 14px 38px rgba(0,0,0,0.12);
 }
 
+/* אייקונים – יותר נקי ועדין */
 .feature-icon {
-  width: 65px;
-  height: 65px;
-  background: #e9f0ff;
+  width: 60px;
+  height: 60px;
+  background: #eaf1ff;
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: 28px;
-  font-size: 32px;
-  color: #296487;
-  margin: 0 auto 20px auto;
+  border-radius: 18px;
+  font-size: 28px;     /* קטן יותר */
+  color: #0050b8;
+  margin: 0 auto 18px auto;
   transition: 0.3s ease;
 }
 
 .feature-card:hover .feature-icon {
-  background: #d3e2ff;
-  transform: scale(1.1);
+  transform: scale(1.08);
+  background: #d9e7ff;
 }
 
-
+/* טקסט כרטיסיות */
 .feature-card h3 {
-  font-size: 1.9rem;
-  color: #154a68;
-  margin-bottom: 12px;
+  font-size: 1.55rem;
+  color: #0a3a66;
+  margin-bottom: 10px;
+  font-weight: 700;
 }
 
 .feature-card p {
-  font-size: 1.05rem;
-  color: #4c5768;
+  font-size: 0.98rem;
+  color: #4c566a;
   line-height: 1.65;
 }
 
-/* STATS GRID */
+/* ============================= */
+/* STATS – נקי ומאוזן */
+/* ============================= */
+
 .stats-grid {
   display: flex;
   flex-wrap: wrap;
-  gap: 30px;
+  gap: 25px;
   justify-content: space-between;
 }
 
 .stat-card {
-  flex: 1 1 250px;
+  flex: 1 1 220px;
   text-align: center;
-  padding: 50px 20px;
-  border-radius: 25px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.07);
-  transition: transform 0.35s ease, box-shadow 0.35s ease;
-  background: #ffffff;
+  padding: 40px 20px;
+  border-radius: 20px;
+  background: white;
+  box-shadow: 0 8px 22px rgba(0,0,0,0.06);
+  transition: 0.35s ease;
 }
 
 .stat-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 20px 50px rgba(0,0,0,0.12);
+  transform: translateY(-6px);
+  box-shadow: 0 16px 45px rgba(0,0,0,0.12);
 }
 
 .stat-number {
-  font-size: 3rem;
-  font-weight: 700;
-  color: #1b6fcf;
-  display: block;
-  margin-bottom: 12px;
+  font-size: 2.7rem;
+  font-weight: 800;
+  background: linear-gradient(90deg, #0054cc, #0094ff);
+  -webkit-background-clip: text;
+  color: transparent;
+  margin-bottom: 10px;
 }
 
 .stat-card h4 {
-  font-size: 1.4rem;
-  color: #26479b;
+  font-size: 1.25rem;
+  color: #0a3a66;
 }
 
 /* ============================= */
-/* FACT HIGHLIGHT – MODERN RTL */
+/* HIGHLIGHT – נקי יותר */
 /* ============================= */
+
 .highlight-section {
   padding: 70px 20px;
 }
 
 .highlight-inner {
-  max-width: 1100px;
-  margin: auto;
+  max-width: 1050px;
   position: relative;
-  padding-right: 50px; /* הפס בצד ימין */
-  color: #2b3950;
-  font-size: 1.45rem;
-  line-height: 1.6;
-  text-align: right; /* טקסט מימין לשמאל */
-  direction: rtl; /* RTL */
+  padding-right: 30px;
+  font-size: 1.25rem;
+  line-height: 1.7;
+  color: #2c3748;
+  transition: 0.3s ease;
+  text-align: right;
 }
 
-/* פס צד כחול */
 .highlight-bar {
   position: absolute;
-  right: 0; /* משמאל ל־right */
-  top: 10px;
-  width: 10px;
-  height: 60px;
-  background: #1b4fcf;
-  border-radius: 6px;
+  right: 0;
+  top: 12px;
+  width: 7px;
+  height: 65px;
+  background: linear-gradient(180deg, #0048A5, #6aaaff);
+  border-radius: 5px;
+  opacity: 0.85;
 }
 
-/* אנימציה קטנה כשעוברים עם העכבר */
 .highlight-inner:hover {
   transform: translateX(-5px);
-  transition: transform 0.3s ease;
 }
-
 
 /* ================================ 
    SERVICES SECTION – RTL MODERN
@@ -882,7 +1018,7 @@ html {
 }
 
 .section-title{
-  font-size:42px;
+  font-size: 4rem;
   font-weight:800;
   margin:18px 0 12px 0;
   letter-spacing:-1px;
@@ -1497,6 +1633,10 @@ textarea {
   /* FACT HIGHLIGHT */
   .highlight-inner {
     font-size: 1rem;
+  }
+
+  .highlight-bar {
+    right: 10px;
   }
 
   /* SERVICES */
