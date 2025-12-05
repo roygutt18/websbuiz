@@ -86,7 +86,8 @@ html {
     background: rgb(255, 255, 255);
     flex-direction: column;
     justify-content: center;
-    gap: 15px;
+    text-aling: center;
+    gap: 20px;
     transition: left 0.3s ease;
     z-index: 1100 !important;
     direction: rtl;
@@ -94,7 +95,7 @@ html {
   }
 
   .nav-links a {
-    font-size: 0.9rem;
+    font-size: 1rem;
     padding: 15px 20px;
     color: #000000;
     font-weight: 600;
@@ -1856,3 +1857,4 @@ textarea {
   opacity: 1;
   transform: translateX(0);
 }
+
