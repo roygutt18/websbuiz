@@ -1883,7 +1883,7 @@ textarea {
 /* תפריט */
 #accessibilityMenu {
   position: fixed;
-  bottom: -150px;
+  bottom: 0px;
   right: 0;
   background: #fff;
   border-radius: 12px 12px 0 0;
@@ -1903,7 +1903,7 @@ textarea {
 
 /* מצב פתוח */
 #accessibilityMenu.open {
-  transform: translateY(-80px);
+  transform: translateY(-30px);
 }
 
 /* האיקס וסגירה */
@@ -2077,7 +2077,7 @@ font-size: 22px;
 #accessibilityMenu {
 width: 80vw;
 max-width: none;
-bottom: -100px;
+bottom: 0;
 right: 30px;
 border-radius: 12px 12px 0 0;
 padding: 15px;
@@ -2086,7 +2086,7 @@ transform: translateY(100%);
 }
 
 #accessibilityMenu.open {
-transform: translateY(30px);
+transform: translateY(0px);
 }
 /* כפתורי סגירה ואיפוס */
 #closeMenu, #resetBtn {
@@ -2135,5 +2135,3 @@ width: 16px;
 height: 16px;
 }
 }
-
-
