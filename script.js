@@ -214,22 +214,6 @@ document.addEventListener("DOMContentLoaded", () => {
     accessibilityMenu.classList.remove("open");
   });
 
-  // ---------- טקסט ----------
-  const textRange = document.getElementById("textRange");
-  const baseFontSize = 16; // פיקסלים
-  let currentFontSize = baseFontSize;
-
-  function updateFontSize() {
-    const scale = textRange.value / 100;
-    currentFontSize = baseFontSize * scale;
-    document.querySelectorAll("body *:not(#accessibilityMenu *)").forEach(el => {
-      el.style.fontSize = currentFontSize + "px";
-    });
-  }
-
-  textRange.addEventListener("input", updateFontSize);
-  updateFontSize(); // אתחול
-
   // ---------- רקע מותאם ----------
   const bgBtn = document.getElementById("bgBtn");
   let bgActive = false;
@@ -286,9 +270,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // ---------- כפתור איפוס ----------
   resetBtn.addEventListener("click", () => {
-    // טקסט
-    textRange.value = 100;
-    updateFontSize();
 
     // רקע מותאם ואפקטים
     document.body.classList.remove(
