@@ -47,7 +47,7 @@
   <!-- Overlay -->
   <div class="overlay"></div>
 
-  <section class="hero" id="home">
+  <section class="hero">
     <div class="hero-content">
       <h1>אתרים שמעצימים את המותג שלך</h1>
       <p>אני בונה אתרים מהירים, מודרניים וחכמים שמקדמים את העסק שלך ומרתקים את הלקוחות.</p>
@@ -66,8 +66,8 @@
     <div class="about-header animate-right">
       <h2>מי אני</h2>
       <p>
-        WEBSBUIZב אני יוצר פתרונות ווב מודרניים שמעצימים עסקים,
-        משפרים חוויית משתמש ומספקים תוצאות אמיתיו. כל פרויקט נבנה בקפידה
+        ב-WEBSBUIZ אני יוצר פתרונות ווב מודרניים שמעצימים עסקים,
+        משפרים חוויית משתמש ומספקים תוצאות אמיתיות. כל פרויקט נבנה בקפידה
         עם דגש על עיצוב, ביצועים ואוטומציה חכמה.
       </p>
     </div>
@@ -524,62 +524,115 @@
 
 
 
-  <!-- ============================= -->
-  <!-- CONTACT -->
-  <!-- ============================= -->
-  <section id="contact" class="contact-section">
-    <div class="contact-wrapper">
+    <!-- ============================= -->
+    <!-- CONTACT -->
+    <!-- ============================= -->
+    <section id="contact" class="contact-section">
+      <div class="contact-wrapper">
 
-      <!-- TEXT SIDE -->
-      <div class="contact-info">
-        <h2 class="contact-main-title">מוכן להתחיל פרויקט?</h2>
-        <p class="contact-desc">
-          הפוך את הרעיון שלך לאתר מודרני, מהיר ומותאם אישית. <br><br>
-          ניתן ליצור קשר בכל שעה — בדרך כלל אני עונה תוך דקות.
-        </p>
-        
+        <!-- TEXT SIDE -->
+        <div class="contact-info">
+          <h2 class="contact-main-title">מוכן להתחיל פרויקט?</h2>
+          <p class="contact-desc">
+            הפוך את הרעיון שלך לאתר מודרני, מהיר ומותאם אישית. <br><br>
+            ניתן ליצור קשר בכל שעה — בדרך כלל אני עונה תוך דקות.
+          </p>
+          
 
-        <div class="contact-actions">
-          <a href="https://wa.me/+972547019909" target="_blank" class="cta-btn whatsapp">
-            <i class="fab fa-whatsapp"></i> שלח הודעת WhatsApp
-          </a>
+          <div class="contact-actions">
+            <a href="https://wa.me/+972547019909" target="_blank" class="cta-btn whatsapp">
+              <i class="fab fa-whatsapp"></i> שלח הודעת WhatsApp
+            </a>
 
-          <a href="mailto:roygutt1829@gmail.com" class="cta-btn email">
-            <i class="fas fa-envelope"></i> שלח מייל
-          </a>
+            <a href="mailto:roygutt1829@gmail.com" class="cta-btn email">
+              <i class="fas fa-envelope"></i> שלח מייל
+            </a>
+          </div>
+        </div>
+
+        <!-- FORM SIDE -->
+        <form class="contact-card">
+          <h3 class="form-title">שלח הודעה</h3>
+
+          <div class="form-group">
+            <label for="name">שם</label>
+            <input type="text" id="name" placeholder="השם שלך" required>
+          </div>
+
+          <div class="form-group">
+            <label for="email">אימייל</label>
+            <input type="email" id="email" placeholder="האימייל שלך" required>
+          </div>
+
+          <div class="form-group">
+            <label for="message">הודעה</label>
+            <textarea id="message" placeholder="ספר לי על הפרויקט שלך..." required></textarea>
+          </div>
+
+          <button type="submit" class="form-submit">שלח הודעה</button>
+        </form>
+
+      </div>
+    </section>
+
+
+    
+
+    <!-- כפתור נגישות -->
+    <div id="accessibilityBtn"><i class="fas fa-universal-access"></i></div>
+
+    <!-- תפריט נגישות -->
+    <div id="accessibilityMenu">
+      <button id="closeMenu"><i class="fas fa-times"></i></button>
+      <button id="resetBtn"><i class="fas fa-undo"></i></button>
+      <h3>נגישות</h3>
+
+      <!-- קטגוריה טקסט -->
+      <div class="category">
+        <h4>טקסט</h4>
+        <!-- סליידר אחד להגדלת/הקטנת טקסט -->
+        <div id="text-control">
+          <label for="textRange">גודל טקסט:</label>
+          <input type="range" id="textRange" min="50" max="200" value="100">
         </div>
       </div>
 
-      <!-- FORM SIDE -->
-      <form class="contact-card">
-        <h3 class="form-title">שלח הודעה</h3>
-
-        <div class="form-group">
-          <label for="name">שם</label>
-          <input type="text" id="name" placeholder="השם שלך" required>
+      <!-- קטגוריה צבעים -->
+      <div class="category">
+        <h4>צבעים</h4>
+        <div class="cards">
+          <div class="card" id="contrastBtn"><i class="fas fa-adjust"></i> ניגודיות גבוהה</div>
+          <div class="card" id="bgBtn"><i class="fas fa-palette"></i> צבעי רקע מותאמים</div>
         </div>
+      </div>
 
-        <div class="form-group">
-          <label for="email">אימייל</label>
-          <input type="email" id="email" placeholder="האימייל שלך" required>
+      <!-- קטגוריה אנימציות -->
+      <div class="category">
+        <h4>אנימציות</h4>
+        <div class="cards">
+          <div class="card" id="disableAnimBtn"><i class="fas fa-pause-circle"></i> כבה אנימציות</div>
+          <div class="card" id="enableAnimBtn"><i class="fas fa-play-circle"></i> הפעל אנימציות</div>
+          <div class="card" id="reduceMotionBtn"><i class="fas fa-ban"></i> הפחתת תנועה</div>
         </div>
+      </div>
 
-        <div class="form-group">
-          <label for="message">הודעה</label>
-          <textarea id="message" placeholder="ספר לי על הפרויקט שלך..." required></textarea>
+      <!-- קטגוריה קישורים וסמן -->
+      <div class="category">
+        <h4>קישורים וסמן</h4>
+        <div class="cards">
+          <div class="card" id="highlightLinksBtn"><i class="fas fa-link"></i> הדגש קישורים</div>
+          <div class="card" id="cursorBtn"><i class="fas fa-mouse-pointer"></i> שינוי סמן</div>
         </div>
-
-        <button type="submit" class="form-submit">שלח הודעה</button>
-      </form>
+      </div>
 
     </div>
-  </section>
+    
+
+
 
 
 
   <script src="script.js"></script>
 </body>
 </html>
-
-
 
