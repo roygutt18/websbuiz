@@ -2086,7 +2086,7 @@ transform: translateY(100%);
 }
 
 #accessibilityMenu.open {
-transform: translateY(0px);
+transform: translateY(30px);
 }
 /* כפתורי סגירה ואיפוס */
 #closeMenu, #resetBtn {
@@ -2135,4 +2135,5 @@ width: 16px;
 height: 16px;
 }
 }
+
 
