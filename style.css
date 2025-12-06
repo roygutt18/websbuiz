@@ -1529,6 +1529,7 @@ textarea {
     height: auto;
     min-height: 100vh;
     padding: 120px 20px 80px 20px;
+    padding-top: 60px;
     justify-content: center;
     text-align: center;
     background-attachment: scroll;
@@ -2065,8 +2066,8 @@ textarea {
 #accessibilityBtn {
 width: 35px;
 height: 35px;
-bottom: 50px;
-right: 50px;
+bottom: 30px;
+right: 30px;
 }
 #accessibilityBtn i {
 font-size: 22px;
