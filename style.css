@@ -1883,7 +1883,7 @@ textarea {
 /* תפריט */
 #accessibilityMenu {
   position: fixed;
-  bottom: 0px;
+  bottom: -150px;
   right: 0;
   background: #fff;
   border-radius: 12px 12px 0 0;
@@ -2077,7 +2077,7 @@ font-size: 22px;
 #accessibilityMenu {
 width: 80vw;
 max-width: none;
-bottom: 0;
+bottom: -100px;
 right: 30px;
 border-radius: 12px 12px 0 0;
 padding: 15px;
@@ -2135,3 +2135,4 @@ width: 16px;
 height: 16px;
 }
 }
+
