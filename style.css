@@ -101,6 +101,7 @@ html {
     font-weight: 600;
     border-radius: 8px;
     transition: 0.25s ease;
+    text-aling: center;
   }
 
   .nav-links a:hover {
@@ -1541,7 +1542,7 @@ textarea {
   }
 
   .hero h1 {
-    font-size: 3.2rem;
+    font-size: 3.8rem;
     line-height: 1.25;
   }
 
@@ -1857,4 +1858,5 @@ textarea {
   opacity: 1;
   transform: translateX(0);
 }
+
 
