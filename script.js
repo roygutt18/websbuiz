@@ -199,3 +199,112 @@ function updateTimeline() {
 window.addEventListener("scroll", updateTimeline);
 updateTimeline();
 
+
+document.addEventListener("DOMContentLoaded", () => {
+  const accessibilityBtn = document.getElementById("accessibilityBtn");
+  const accessibilityMenu = document.getElementById("accessibilityMenu");
+  const closeMenu = document.getElementById("closeMenu");
+  const resetBtn = document.getElementById("resetBtn");
+
+  // ---------- כפתורי פתיחה וסגירה ----------
+  accessibilityBtn.addEventListener("click", () => {
+    accessibilityMenu.classList.toggle("open");
+  });
+  closeMenu.addEventListener("click", () => {
+    accessibilityMenu.classList.remove("open");
+  });
+
+  // ---------- טקסט ----------
+  const textRange = document.getElementById("textRange");
+  const baseFontSize = 16; // פיקסלים
+  let currentFontSize = baseFontSize;
+
+  function updateFontSize() {
+    const scale = textRange.value / 100;
+    currentFontSize = baseFontSize * scale;
+    document.querySelectorAll("body *:not(#accessibilityMenu *)").forEach(el => {
+      el.style.fontSize = currentFontSize + "px";
+    });
+  }
+
+  textRange.addEventListener("input", updateFontSize);
+  updateFontSize(); // אתחול
+
+  // ---------- רקע מותאם ----------
+  const bgBtn = document.getElementById("bgBtn");
+  let bgActive = false;
+
+  bgBtn.addEventListener("click", () => {
+    bgActive = !bgActive;
+    document.body.classList.toggle("custom-bg", bgActive);
+    bgBtn.classList.toggle("active", bgActive);
+  });
+
+  // ---------- אנימציות ----------
+  const disableAnimBtn = document.getElementById("disableAnimBtn");
+  const enableAnimBtn = document.getElementById("enableAnimBtn");
+  const reduceMotionBtn = document.getElementById("reduceMotionBtn");
+
+  disableAnimBtn.addEventListener("click", () => {
+    document.body.classList.add("disable-animations");
+    disableAnimBtn.classList.add("active");
+    enableAnimBtn.classList.remove("active");
+    reduceMotionBtn.classList.remove("active");
+  });
+
+  enableAnimBtn.addEventListener("click", () => {
+    document.body.classList.remove("disable-animations", "reduce-motion");
+    enableAnimBtn.classList.add("active");
+    disableAnimBtn.classList.remove("active");
+    reduceMotionBtn.classList.remove("active");
+  });
+
+  reduceMotionBtn.addEventListener("click", () => {
+    document.body.classList.add("reduce-motion");
+    reduceMotionBtn.classList.add("active");
+    enableAnimBtn.classList.remove("active");
+    disableAnimBtn.classList.remove("active");
+  });
+
+  // ---------- קישורים וסמן ----------
+  const highlightLinksBtn = document.getElementById("highlightLinksBtn");
+  const cursorBtn = document.getElementById("cursorBtn");
+  let cursorActive = false;
+  let linksActive = false;
+
+  highlightLinksBtn.addEventListener("click", () => {
+    linksActive = !linksActive;
+    document.body.classList.toggle("highlight-links", linksActive);
+    highlightLinksBtn.classList.toggle("active", linksActive);
+  });
+
+  cursorBtn.addEventListener("click", () => {
+    cursorActive = !cursorActive;
+    document.body.classList.toggle("large-cursor", cursorActive);
+    cursorBtn.classList.toggle("active", cursorActive);
+  });
+
+  // ---------- כפתור איפוס ----------
+  resetBtn.addEventListener("click", () => {
+    // טקסט
+    textRange.value = 100;
+    updateFontSize();
+
+    // רקע מותאם ואפקטים
+    document.body.classList.remove(
+      "custom-bg",
+      "disable-animations",
+      "reduce-motion",
+      "highlight-links",
+      "large-cursor"
+    );
+
+    // אפס פעיל לכל הכרטיסיות
+    document.querySelectorAll(".card").forEach(card => card.classList.remove("active"));
+
+    // אפס משתנים
+    bgActive = false;
+    cursorActive = false;
+    linksActive = false;
+  });
+});
