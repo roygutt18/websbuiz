@@ -1857,6 +1857,8 @@ textarea {
   transform: translateX(0);
 }
 
+
+
 /* כפתור נגישות */
 #accessibilityBtn {
   position: fixed;
@@ -1880,7 +1882,7 @@ textarea {
 /* תפריט */
 #accessibilityMenu {
   position: fixed;
-  bottom: 0;
+  bottom: -50px;
   right: 0;
   background: #fff;
   border-radius: 12px 12px 0 0;
@@ -1900,7 +1902,7 @@ textarea {
 
 /* מצב פתוח */
 #accessibilityMenu.open {
-  transform: translateY(0);
+  transform: translateY(-80px);
 }
 
 /* האיקס וסגירה */
@@ -2056,4 +2058,79 @@ textarea {
 
 #textRange::-moz-range-thumb:hover {
   transform: scale(1.2);
+}
+/* --- גרסת נייד עבור כפתור הנגישות --- */
+@media (max-width: 768px) {
+/* כפתור נגישות */
+#accessibilityBtn {
+width: 35px;
+height: 35px;
+bottom: 50px;
+right: 50px;
+}
+#accessibilityBtn i {
+font-size: 22px;
+}
+
+/* תפריט נגישות */
+#accessibilityMenu {
+width: 80vw;
+max-width: none;
+bottom: 0;
+right: 30px;
+border-radius: 12px 12px 0 0;
+padding: 15px;
+gap: 15px;
+transform: translateY(100%);
+}
+
+#accessibilityMenu.open {
+transform: translateY(0px);
+}
+/* כפתורי סגירה ואיפוס */
+#closeMenu, #resetBtn {
+width: 30px;
+height: 30px;
+font-size: 16px;
+}
+#resetBtn { right: 45px; }
+
+/* כותרת */
+#accessibilityMenu h3 {
+font-size: 18px;
+padding-bottom: 4px;
+}
+
+/* קטגוריות */
+.category h4 {
+font-size: 14px;
+padding-bottom: 2px;
+}
+
+/* כרטיסיות פונקציות */
+.cards {
+gap: 8px;
+}
+.card {
+flex: 1 1 48%;
+padding: 10px;
+font-size: 14px;
+}
+
+/* סליידר */
+#text-control {
+padding: 10px;
+gap: 6px;
+}
+#text-control label {
+font-size: 14px;
+}
+#textRange {
+height: 5px;
+}
+#textRange::-webkit-slider-thumb,
+#textRange::-moz-range-thumb {
+width: 16px;
+height: 16px;
+}
 }
