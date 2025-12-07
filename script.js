@@ -200,92 +200,55 @@ window.addEventListener("scroll", updateTimeline);
 updateTimeline();
 
 
-document.addEventListener("DOMContentLoaded", () => {
-  const accessibilityBtn = document.getElementById("accessibilityBtn");
-  const accessibilityMenu = document.getElementById("accessibilityMenu");
-  const closeMenu = document.getElementById("closeMenu");
-  const resetBtn = document.getElementById("resetBtn");
+const btn = document.getElementById('accessibilityBtn');
+const menu = document.getElementById('accessibilityMenu');
+const closeMenu = document.getElementById('closeMenu');
+const increaseText = document.getElementById('increaseText');
+const decreaseText = document.getElementById('decreaseText');
+const toggleContrast = document.getElementById('toggleContrast');
+const resetAccessibility = document.getElementById('resetAccessibility');
 
-  // ---------- כפתורי פתיחה וסגירה ----------
-  accessibilityBtn.addEventListener("click", () => {
-    accessibilityMenu.classList.toggle("open");
-  });
-  closeMenu.addEventListener("click", () => {
-    accessibilityMenu.classList.remove("open");
-  });
+let textSizeLevel = 0;
 
-  // ---------- רקע מותאם ----------
-  const bgBtn = document.getElementById("bgBtn");
-  let bgActive = false;
-
-  bgBtn.addEventListener("click", () => {
-    bgActive = !bgActive;
-    document.body.classList.toggle("custom-bg", bgActive);
-    bgBtn.classList.toggle("active", bgActive);
-  });
-
-  // ---------- אנימציות ----------
-  const disableAnimBtn = document.getElementById("disableAnimBtn");
-  const enableAnimBtn = document.getElementById("enableAnimBtn");
-  const reduceMotionBtn = document.getElementById("reduceMotionBtn");
-
-  disableAnimBtn.addEventListener("click", () => {
-    document.body.classList.add("disable-animations");
-    disableAnimBtn.classList.add("active");
-    enableAnimBtn.classList.remove("active");
-    reduceMotionBtn.classList.remove("active");
-  });
-
-  enableAnimBtn.addEventListener("click", () => {
-    document.body.classList.remove("disable-animations", "reduce-motion");
-    enableAnimBtn.classList.add("active");
-    disableAnimBtn.classList.remove("active");
-    reduceMotionBtn.classList.remove("active");
-  });
-
-  reduceMotionBtn.addEventListener("click", () => {
-    document.body.classList.add("reduce-motion");
-    reduceMotionBtn.classList.add("active");
-    enableAnimBtn.classList.remove("active");
-    disableAnimBtn.classList.remove("active");
-  });
-
-  // ---------- קישורים וסמן ----------
-  const highlightLinksBtn = document.getElementById("highlightLinksBtn");
-  const cursorBtn = document.getElementById("cursorBtn");
-  let cursorActive = false;
-  let linksActive = false;
-
-  highlightLinksBtn.addEventListener("click", () => {
-    linksActive = !linksActive;
-    document.body.classList.toggle("highlight-links", linksActive);
-    highlightLinksBtn.classList.toggle("active", linksActive);
-  });
-
-  cursorBtn.addEventListener("click", () => {
-    cursorActive = !cursorActive;
-    document.body.classList.toggle("large-cursor", cursorActive);
-    cursorBtn.classList.toggle("active", cursorActive);
-  });
-
-  // ---------- כפתור איפוס ----------
-  resetBtn.addEventListener("click", () => {
-
-    // רקע מותאם ואפקטים
-    document.body.classList.remove(
-      "custom-bg",
-      "disable-animations",
-      "reduce-motion",
-      "highlight-links",
-      "large-cursor"
-    );
-
-    // אפס פעיל לכל הכרטיסיות
-    document.querySelectorAll(".card").forEach(card => card.classList.remove("active"));
-
-    // אפס משתנים
-    bgActive = false;
-    cursorActive = false;
-    linksActive = false;
-  });
+// פתיחה
+btn.addEventListener('click', () => {
+  menu.classList.toggle('active');
 });
+
+// סגירה עם X
+closeMenu.addEventListener('click', () => {
+  menu.classList.remove('active');
+});
+
+// הגדלת טקסט
+increaseText.addEventListener('click', () => {
+  if (textSizeLevel < 2) textSizeLevel++;
+  updateTextSize();
+});
+
+// הקטנת טקסט
+decreaseText.addEventListener('click', () => {
+  if (textSizeLevel > 0) textSizeLevel--;
+  updateTextSize();
+});
+
+// מצב ניגודיות
+toggleContrast.addEventListener('click', () => {
+  document.body.classList.toggle('high-contrast');
+});
+
+// איפוס
+resetAccessibility.addEventListener('click', () => {
+  document.body.classList.remove('high-contrast');
+  document.documentElement.classList.remove('large-text', 'larger-text', 'normal-text');
+  textSizeLevel = 0;
+});
+
+// פונקציית עדכון טקסט
+function updateTextSize() {
+  document.documentElement.classList.remove('normal-text', 'large-text', 'larger-text');
+
+  if (textSizeLevel === 0) document.documentElement.classList.add('normal-text');
+  if (textSizeLevel === 1) document.documentElement.classList.add('large-text');
+  if (textSizeLevel === 2) document.documentElement.classList.add('larger-text');
+}
