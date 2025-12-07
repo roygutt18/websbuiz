@@ -576,56 +576,41 @@
     </section>
 
 
-    
+    <div class="accessibility-widget">
 
-    <!-- כפתור נגישות -->
-    <div id="accessibilityBtn"><i class="fas fa-universal-access"></i></div>
+    <!-- כפתור פתיחה -->
+    <button id="accessibilityBtn" class="accessibility-toggle">
+      <i class="fas fa-universal-access"></i>
+    </button>
 
-    <!-- תפריט נגישות -->
-    <div id="accessibilityMenu">
-      <button id="closeMenu"><i class="fas fa-times"></i></button>
-      <button id="resetBtn"><i class="fas fa-undo"></i></button>
-      <h3>נגישות</h3>
+    <!-- תפריט -->
+    <div id="accessibilityMenu" class="accessibility-menu">
 
-      <!-- קטגוריה טקסט -->
-      <div class="category">
-        <h4>טקסט</h4>
-        <!-- סליידר אחד להגדלת/הקטנת טקסט -->
-        <div id="text-control">
-          <label for="textRange">גודל טקסט:</label>
-          <input type="range" id="textRange" min="50" max="200" value="100">
-        </div>
+      <!-- חלק עליון -->
+      <div class="menu-top">
+        <h3>נגישות</h3>
+        <button class="close-menu" id="closeMenu"><i class="fas fa-times"></i></button>
       </div>
 
-      <!-- קטגוריה צבעים -->
-      <div class="category">
-        <h4>צבעים</h4>
-        <div class="cards">
-          <div class="card" id="contrastBtn"><i class="fas fa-adjust"></i> ניגודיות גבוהה</div>
-          <div class="card" id="bgBtn"><i class="fas fa-palette"></i> צבעי רקע מותאמים</div>
-        </div>
+      <!-- גוף -->
+      <div class="menu-body">
+        <button id="increaseText"><i class="fas fa-plus"></i> הגדלת טקסט</button>
+        <button id="decreaseText"><i class="fas fa-minus"></i> הקטנת טקסט</button>
+        <button id="toggleContrast"><i class="fas fa-adjust"></i> מצב ניגודיות</button>
       </div>
 
-      <!-- קטגוריה אנימציות -->
-      <div class="category">
-        <h4>אנימציות</h4>
-        <div class="cards">
-          <div class="card" id="disableAnimBtn"><i class="fas fa-pause-circle"></i> כבה אנימציות</div>
-          <div class="card" id="enableAnimBtn"><i class="fas fa-play-circle"></i> הפעל אנימציות</div>
-          <div class="card" id="reduceMotionBtn"><i class="fas fa-ban"></i> הפחתת תנועה</div>
-        </div>
-      </div>
-
-      <!-- קטגוריה קישורים וסמן -->
-      <div class="category">
-        <h4>קישורים וסמן</h4>
-        <div class="cards">
-          <div class="card" id="highlightLinksBtn"><i class="fas fa-link"></i> הדגש קישורים</div>
-          <div class="card" id="cursorBtn"><i class="fas fa-mouse-pointer"></i> שינוי סמן</div>
-        </div>
+      <!-- תחתית -->
+      <div class="menu-footer">
+        <button id="resetAccessibility" class="reset-btn">
+          <i class="fas fa-undo"></i> אפס הגדרות
+        </button>
       </div>
 
     </div>
+
+  </div>
+
+
     
 
 
@@ -635,5 +620,4 @@
   <script src="script.js"></script>
 </body>
 </html>
-
 
