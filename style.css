@@ -449,8 +449,21 @@ section {
 
 
 /* ============================= */
-/* FEATURE CARDS – Clean Tech */
+/* WHY CHOOSE US */
 /* ============================= */
+
+.why-choose {
+  padding: 35px;
+}
+
+.why-choose h2 {
+  font-size: 3.5rem;
+  color: #003366;
+  align-self: center;
+  margin: auto;
+  text-align: center;
+  margin-bottom: 20px;
+}
 
 .features-grid {
   display: grid;
@@ -490,7 +503,8 @@ section {
 }
 
 .feature-card:hover .feature-icon {
-  transform: scale(1.08);
+  transform: scale(1.1);
+  transform: rotate(5deg);
   background: #d9e7ff;
 }
 
@@ -1165,10 +1179,10 @@ section {
 
 /* TAGS */
 .project-tags{
-  margin-top:18px;
-  display:flex;
-  gap:12px;
-  flex-wrap:wrap;
+  margin-top: 18px;
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: center;
 }
