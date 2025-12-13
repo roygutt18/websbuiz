@@ -1,4 +1,3 @@
-
 * {
   margin: 0;
   padding: 0;
@@ -8,6 +7,10 @@
 
 html {
   scroll-behavior: smooth;
+}
+
+section {
+  margin-bottom: 100px;
 }
 
 /* ============================= */
@@ -158,25 +161,28 @@ html {
    HERO CONTENT
 ========================================= */
 .hero-content {
-  max-width: 800px;
   text-align: center;
   color: #0a1a2f; /* כחול כהה על רקע לבן */
   position: relative;
   z-index: 2;
   padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
 }
 
 /* =========================================
    TITLES – גרדיאנט כחול כהה הולך ובא
 ========================================= */
 .hero h1 {
-  font-size: 5rem;
-  margin-bottom: 20px;
+  font-size: 5.5rem;
+
   background: linear-gradient(90deg, #002b5c, #007aff, #003a70);
   -webkit-background-clip: text;
   color: transparent;
   background-size: 200%;
   animation: titleFlow 4.5s ease-in-out infinite;
+  max-width: 850px;
 }
 
 @keyframes titleFlow {
@@ -190,7 +196,8 @@ html {
 .hero p {
   font-size: 1.3rem;
   opacity: 0.85;
-  margin-bottom: 40px;
+  max-width: 700px;
+  margin: auto;
 }
 
 /* =========================================
@@ -351,16 +358,11 @@ html {
   font-size: 4rem;     /* קטן יותר */
   font-weight: 800;
   letter-spacing: -1px;
-  background: linear-gradient(90deg, #062b56, #1878ff);
+  background: linear-gradient(90deg, #062b56, #4291ff);
   -webkit-background-clip: text;
   color: transparent;
   background-size: 120%;
-  animation: headerFlow 4s ease-in-out infinite;
-}
-
-@keyframes headerFlow {
-  0% { background-position: 0%; }
-  100% { background-position: 160%; }
+  margin-bottom: 15px;
 }
 
 .about-line {
@@ -380,6 +382,69 @@ html {
   color: #2f3b50;
   opacity: 0.9;
 }
+
+/* ============================= */
+/* ABOUT SECTION – פסקה + תמונה מרוכזת */
+/* ============================= */
+
+.about-content {
+  display: flex;
+  flex-direction: row; /* Desktop כברירת מחדל */
+  align-items: flex-start;
+  gap: 40px;
+  max-width: 900px;
+  margin: auto;
+  text-align: justify;
+  padding-bottom: 50px;
+  direction: rtl;
+  unicode-bidi: embed; /* חשוב לעברית */
+}
+
+/* תמונה עגולה עם בורדר גרדיאנט זוהר */
+.about-image-container {
+  position: relative;
+  width: 160px;
+  height: 160px;
+  flex-shrink: 0;
+}
+
+.about-image-container::before {
+  content: "";
+  position: absolute;
+  top: -5px;
+  left: -5px;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #1878ff, #62a6ff, #1878ff);
+  filter: blur(6px);
+  z-index: -1;
+}
+
+.about-image {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid white; /* הגבול עצמו לבן */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+}
+
+/* פסקת טקסט */
+.about-text {
+  font-size: 1.15rem;
+  line-height: 1.75;
+  color: #2f3b50;
+  max-width: 750px;
+}
+
+/* הדגשות */
+.about-text .highlight {
+  font-weight: 700;
+  color: #0054cc;
+  font-size: 110%;
+}
+
 
 /* ============================= */
 /* FEATURE CARDS – Clean Tech */
@@ -486,29 +551,18 @@ html {
 /* ============================= */
 
 .highlight-section {
-  padding: 70px 20px;
+  padding: 30px;
+  align-self: center;
 }
 
 .highlight-inner {
-  max-width: 1050px;
+  max-width: 85vw;
   position: relative;
-  padding-right: 30px;
   font-size: 1.25rem;
   line-height: 1.7;
   color: #2c3748;
   transition: 0.3s ease;
   text-align: right;
-}
-
-.highlight-bar {
-  position: absolute;
-  right: 0;
-  top: 12px;
-  width: 7px;
-  height: 65px;
-  background: linear-gradient(180deg, #0048A5, #6aaaff);
-  border-radius: 5px;
-  opacity: 0.85;
 }
 
 .highlight-inner:hover {
@@ -629,7 +683,6 @@ html {
 
 /* HEADER */
 .timeline-header {
-  max-width: 800px;
   text-align: center;
   margin: 0 auto 90px;
 }
@@ -638,12 +691,15 @@ html {
   font-size: 3.8rem;
   font-weight: 800;
   margin-bottom: 20px;
+  
 }
 
 .timeline-header p {
   font-size: 1.25rem;
   color: #555;
   line-height: 1.8;
+  max-width: 700px;
+  margin: auto;
 }
 
 
@@ -1514,6 +1570,161 @@ textarea {
 }
 
 
+/* ============================= */
+/* FOOTER SECTION – DARK MODERN */
+/* ============================= */
+.site-footer {
+  background: linear-gradient(135deg, #00025a, #000000);
+  color: #ffffff;
+  padding: 6rem 2rem 3rem;
+  font-family: "Assistant", sans-serif;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3rem;
+}
+
+.footer-col h3,
+.footer-col h4 {
+  margin-bottom: 1rem;
+  font-size: 1.3rem;
+}
+
+.footer-col p {
+  line-height: 1.8;
+  opacity: 0.9;
+}
+
+.social-links {
+  margin-top: 1.5rem;
+  display: flex;
+  gap: 1rem;
+}
+
+.social-links a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background: rgba(255,255,255,0.15);
+  border-radius: 50%;
+  color: #fff;
+  font-size: 1.2rem;
+  transition: 0.3s;
+}
+
+.social-links a:hover {
+  background: #fff;
+  color: #3b3bff;
+}
+
+.footer-links {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-links li {
+  margin-bottom: 0.8rem;
+}
+
+.footer-links a {
+  color: #e0e0ff;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.footer-links a:hover {
+  color: #ffffff;
+  text-decoration: underline;
+}
+
+.footer-form input,
+.footer-form textarea {
+  width: 100%;
+  margin-bottom: 1rem;
+  padding: 0.8rem;
+  border-radius: 8px;
+  border: none;
+  font-family: inherit;
+}
+
+.footer-form textarea {
+  resize: none;
+  height: 100px;
+}
+
+.footer-form button {
+  width: 100%;
+  padding: 0.8rem;
+  border: none;
+  border-radius: 8px;
+  background: #ffffff;
+  color: #3b3bff;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.footer-form button:hover {
+  background: #e0e0ff;
+}
+
+.form-note {
+  margin-top: 0.5rem;
+  font-size: 0.85rem;
+  opacity: 0.8;
+}
+
+.footer-bottom {
+  margin-top: 4rem;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(255,255,255,0.2);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.footer-legal {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.footer-legal a {
+  color: rgba(255,255,255,0.7);
+  font-size: 0.85rem;
+  text-decoration: none;
+}
+
+.footer-legal a:hover {
+  color: #ffffff;
+}
+
+/* ===== MOBILE ===== */
+@media (max-width: 768px) {
+  .footer-container {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .social-links {
+    justify-content: center;
+  }
+}
+
+
+
 @keyframes fadeUp {
   0% { transform: translateY(30px); opacity: 0; }
   100% { transform: translateY(0); opacity: 1; }
@@ -1580,6 +1791,25 @@ textarea {
   .about-us-light-header p {
     font-size: 1rem;
     max-width: 90%;
+  }
+
+  .about-content {
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+    padding: 40px 20px;
+  }
+
+  .about-image-container {
+    margin: 0;
+    width: 140px;
+    height: 140px;
+  }
+
+  .about-text {
+    text-align: center;
+    font-size: 1.05rem;
+    max-width: 100%;
   }
 
   .about-us-light-features {
@@ -2059,3 +2289,4 @@ body.high-contrast svg {
   color: #fff !important;
   fill: #fff !important;
 }
+
