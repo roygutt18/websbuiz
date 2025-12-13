@@ -4,7 +4,9 @@
   box-sizing: border-box;
   font-family: 'Segoe UI', sans-serif;
 }
-
+body {
+  overflow-x: hidden;
+}
 html {
   scroll-behavior: smooth;
 }
@@ -547,27 +549,36 @@ section {
 }
 
 /* ============================= */
-/* HIGHLIGHT – נקי יותר */
+/* HIGHLIGHT SECTION – Clean + Simple Spans */
 /* ============================= */
 
 .highlight-section {
-  padding: 30px;
-  align-self: center;
+  padding: 40px 20px;
+  display: flex;
+  justify-content: center;
 }
 
 .highlight-inner {
-  max-width: 85vw;
-  position: relative;
+  max-width: 900px;
   font-size: 1.25rem;
-  line-height: 1.7;
+  line-height: 1.75;
   color: #2c3748;
-  transition: 0.3s ease;
   text-align: right;
+  direction: rtl;
+  unicode-bidi: embed;
+  transition: 0.3s ease;
 }
 
 .highlight-inner:hover {
   transform: translateX(-5px);
 }
+
+/* שני סוגי ספאנים בלבד */
+.highlight-inner .important {
+  font-weight: 700;
+  color: #0054cc; /* כחול כהה */
+}
+
 
 /* ================================ 
    SERVICES SECTION – RTL MODERN
@@ -2289,4 +2300,3 @@ body.high-contrast svg {
   color: #fff !important;
   fill: #fff !important;
 }
-
