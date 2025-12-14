@@ -26,7 +26,7 @@ section {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: rgba(255, 255, 255, 0.85);
+  background: rgba(255, 255, 255, 0.75);
   backdrop-filter: blur(12px);
   z-index: 1000;
   direction: rtl; /* מתאים לעברית */
@@ -847,13 +847,13 @@ section {
 }
 
 .tag.orange {
-  background-color: rgb(255, 247, 231);
+  background-color: rgb(255, 244, 222);
   color: rgb(255, 183, 0);
 }
 
-.tag.black {
-  color: black;
-  background-color: #e9e9e9;
+.tag.purple {
+  color: rgb(123, 0, 255);
+  background-color: #e7d2ff;
 }
 
 .timeline-line {
@@ -1206,10 +1206,17 @@ section {
 
 .btn{
   padding:12px 18px;
+  display: block;
   border-radius:12px;
   font-size:15px;
   font-weight:600;
   cursor:pointer;
+  transition: 0.5s ease;
+}
+
+.btn:hover {
+  transform:scale(1.1);
+  box-shadow:10px 10px 25px rgba(15,62,255,0.2);
 }
 
 .btn-primary1{
@@ -1674,8 +1681,9 @@ textarea {
   margin-bottom: 1rem;
   padding: 0.8rem;
   border-radius: 8px;
-  border: none;
+  border: 2px solid #000c79;
   font-family: inherit;
+  background-color: #00012c;
 }
 
 .footer-form textarea {
@@ -1688,8 +1696,8 @@ textarea {
   padding: 0.8rem;
   border: none;
   border-radius: 8px;
-  background: #ffffff;
-  color: #3b3bff;
+  background: #00013b;
+  color: #ffffff;
   font-weight: bold;
   cursor: pointer;
   transition: 0.3s;
@@ -1777,7 +1785,7 @@ textarea {
   }
 
   .hero h1 {
-    font-size: 5rem;
+    font-size: 4rem;
     line-height: 1.25;
   }
 
@@ -1794,12 +1802,12 @@ textarea {
   }
 
   .btn.primary,.btn.secondary {
-    padding: 12px 26px;
-    font-size: 1.2rem;
+    padding: 12px;
+    font-size: 1rem;
     text-align: center;
     white-space: nowrap;
     width: max-content;
-    height: 40px;
+    justify-content: center;
   }
 
   /* ABOUT US LIGHT */
@@ -2314,7 +2322,6 @@ body.high-contrast svg {
   color: #fff !important;
   fill: #fff !important;
 }
-
 
 
 
