@@ -1777,7 +1777,7 @@ textarea {
   }
 
   .hero h1 {
-    font-size:4.3rem;
+    font-size: 5rem;
     line-height: 1.25;
   }
 
@@ -2314,5 +2314,6 @@ body.high-contrast svg {
   color: #fff !important;
   fill: #fff !important;
 }
+
 
 
