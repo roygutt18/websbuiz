@@ -1795,7 +1795,8 @@ textarea {
 
   .btn.primary,.btn.secondary {
     padding: 12px 26px;
-    font-size: 0.8rem;
+    font-size: 1.1rem;
+    font-weight: 800;
     text-align: center;
     white-space: nowrap;
     width: max-content;
@@ -2314,5 +2315,6 @@ body.high-contrast svg {
   color: #fff !important;
   fill: #fff !important;
 }
+
 
 
