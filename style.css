@@ -1777,13 +1777,13 @@ textarea {
   }
 
   .hero h1 {
-    font-size: 3.8rem;
+    font-size:4.3rem;
     line-height: 1.25;
   }
 
   .hero p {
-    font-size: 1rem;
-    margin-bottom: 20px;
+    font-size: 1.2rem;
+    margin-bottom: 0px;
   }
 
   .hero-buttons {
@@ -2314,4 +2314,5 @@ body.high-contrast svg {
   color: #fff !important;
   fill: #fff !important;
 }
+
 
