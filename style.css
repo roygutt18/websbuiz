@@ -1782,7 +1782,7 @@ textarea {
   }
 
   .hero p {
-    font-size: 1.2rem;
+    font-size: 1rem;
     margin-bottom: 0px;
   }
 
@@ -2314,6 +2314,7 @@ body.high-contrast svg {
   color: #fff !important;
   fill: #fff !important;
 }
+
 
 
 
