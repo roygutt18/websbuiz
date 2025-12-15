@@ -33,11 +33,27 @@ section {
 }
 
 .logo {
-  font-size: 2rem;
-  font-weight: 900;
-  color: #000000;
+  font-family: "Inter", "Poppins", sans-serif;
   letter-spacing: 2px;
+  display: inline-flex;
+  align-items: center;
+  direction: ltr;
 }
+
+/* החלק הראשי */
+.logo-main {
+  font-size: 2.2rem;
+  font-weight: 900;
+}
+
+/* החלק המשני */
+.logo-sub {
+  font-size: 1.9rem;
+  font-weight: 400;
+  margin-left: 2px;
+}
+
+
 
 /* NAV LINKS – Desktop */
 .nav-links {
@@ -177,7 +193,7 @@ section {
    TITLES – גרדיאנט כחול כהה הולך ובא
 ========================================= */
 .hero h1 {
-  font-size: 5.5rem;
+  font-size: 7rem;
 
   background: linear-gradient(90deg, #002b5c, #007aff, #003a70);
   -webkit-background-clip: text;
