@@ -1075,28 +1075,25 @@ section {
 
 
 
-:root{
-  --accent: #0f62fe;
-  --accent-dark: #0030c9;
-  --text: #0d0d0d;
-  --muted: #5f6a7a;
-  --bg: #ffffff;
-  --radius: 14px;
-  --shadow: 0 18px 35px rgba(0,0,0,0.08);
-
-  font-family: "Inter", sans-serif;
-}
+/* ================= STRUCTURE ONLY ================= */
 
 .projects-section{
-  padding: 90px 20px;
+  padding:90px 20px;
+  display:flex;
+  flex-direction:column;
+  gap:40px;
+  font-family:"Inter", sans-serif;
 }
 
-.container{
+.projects-container{
   max-width:1150px;
   margin:auto;
+  display:flex;
+  flex-direction:column;
+  gap:40px;
 }
 
-/* ---------------- TITLE --------------- */
+/* TITLE */
 
 .section-header{
   text-align:center;
@@ -1110,45 +1107,44 @@ section {
   font-weight:700;
   letter-spacing:1px;
   border-radius:999px;
-  background:rgba(15,98,254,0.12);
-  color:var(--accent);
+  background-color: #a5c5ff;
+  color: #0030c9;
 }
 
 .section-title{
-  font-size: 4rem;
+  font-size:4rem;
   font-weight:800;
-  margin:18px 0 12px 0;
+  margin:18px 0 12px;
   letter-spacing:-1px;
-  color:var(--text);
 }
 
 .section-underline{
-  width:95px;
+  width:20%;
   height:4px;
-  background:linear-gradient(90deg,var(--accent),var(--accent-dark));
   margin:0 auto;
   border-radius:999px;
+  background: linear-gradient(rgb(19, 94, 255), rgb(7, 39, 143));
 }
 
-/* ---------------- CARD --------------- */
+/* CARD */
+
 .project-card{
-  display: flex;
-  flex-direction: column;
+  display:flex;
+  flex-direction:column;
   gap:40px;
-  background:#fff;
-  border-radius:var(--radius);
+  border-radius:14px;
   padding:34px;
-  box-shadow:var(--shadow);
-  justify-content: center;
-  text-align: center;
-  align-items: center;
-  width: fit-content;
-  margin: auto;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  width:600px;
+  margin:auto;
 }
 
 /* MEDIA */
+
 .project-media{
-  border-radius:var(--radius);
+  border-radius:14px;
   overflow:hidden;
   position:relative;
 }
@@ -1160,27 +1156,8 @@ section {
   object-fit:cover;
 }
 
-.play-btn{
-  position:absolute;
-  top: 10px;
-  right: 10px;
-  width:65px;
-  height:65px;
-  font-size:26px;
-  background: rgba(0, 89, 255, 0.221);
-  border: 2px solid #0059ff;
-  border-radius:50%;
-  color:white;
-  cursor:pointer;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  box-shadow:0 14px 25px rgba(15,98,254,0.25);
-  transition:0.2s ease;
-}
-.play-btn:hover{ transform:scale(1.08); }
-
 /* INFO */
+
 .project-title{
   font-size:26px;
   font-weight:700;
@@ -1189,77 +1166,57 @@ section {
 
 .project-description{
   margin-top:12px;
-  color:var(--muted);
   line-height:1.65;
 }
 
 /* TAGS */
+
 .project-tags{
-  margin-top: 18px;
-  display: flex;
-  gap: 12px;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
+  margin-top:18px;
+  display:flex;
+  gap:12px;
+  flex-wrap:wrap;
+  justify-content:center;
 }
 
 .tag{
   padding:7px 14px;
-  background:#eef3ff;
-  color:#0641d8;
   border-radius:999px;
   font-size:13px;
   font-weight:600;
 }
 
 /* BUTTONS */
+
 .project-actions{
   margin-top:26px;
   display:flex;
   gap:12px;
-  justify-content: center;
+  justify-content:center;
 }
 
 .btn{
   padding:12px 18px;
-  display: block;
   border-radius:12px;
   font-size:15px;
   font-weight:600;
   cursor:pointer;
-  transition: 0.5s ease;
+  transition:0.4s ease;
 }
 
-.btn:hover {
-  transform:scale(1.1);
-  box-shadow:10px 10px 25px rgba(15,62,255,0.2);
+.btn:hover{
+  transform:scale(1.08);
 }
 
-.btn-primary1{
-  background:linear-gradient(90deg,var(--accent),var(--accent-dark));
-  border:none;
-  color:white;
-  text-decoration:none;
-  box-shadow:0 12px 28px rgba(15,62,255,0.22);
-}
-
-.btn-outline{
-  background:white;
-  color:var(--accent-dark);
-  border:2px solid var(--accent);
-}
-
-/* ---------------- FULL WIDTH VIDEO MODAL ---------------- */
+/* VIDEO MODAL STRUCTURE */
 
 .video-modal{
   position:fixed;
   inset:0;
-  background:rgba(0,0,0,0.65);
   display:none;
   align-items:center;
   justify-content:center;
   z-index:2000;
-  backdrop-filter: blur(3px);
 }
 
 .video-modal.show{
@@ -1274,129 +1231,93 @@ section {
 
 .recommendation-video{
   width:100%;
-  height:auto;
   border-radius:14px;
 }
 
-/* BIG CLEAR CLOSE BUTTON */
 .modal-close{
   position:absolute;
   top:-50px;
   right:0;
   width:45px;
   height:45px;
-  background:var(--accent);
-  border:none;
-  color:white;
   font-size:26px;
   border-radius:50%;
   cursor:pointer;
   display:flex;
   align-items:center;
   justify-content:center;
-  box-shadow:0 8px 20px rgba(15,98,254,0.4);
-  transition:0.15s ease;
 }
-.modal-close:hover{ transform:scale(1.12); }
 
-/* RESPONSIVE */
-@media (max-width: 768px) {
+/* ================= THEME – EDI LEVY ================= */
 
-  /* מרווחים כלליים */
-  .projects-section {
-    padding: 60px 16px;
-  }
-
-  /* טייטל */
-  .section-title {
-    font-size: 32px;
-    line-height: 1.2;
-  }
-  .section-label {
-    font-size: 12px;
-    padding: 6px 14px;
-  }
-
-  /* כרטיס הפרויקט */
-  .project-card {
-    grid-template-columns: 1fr;
-    padding: 22px;
-    gap: 22px;
-    border-radius: 18px;
-  }
-
-  /* מדיה — תצוגה יפה יותר */
-  .project-media {
-    border-radius: 18px;
-  }
-
-  /* כפתור פליי גדול ונגיש */
-  .play-btn {
-    width: 60px;
-    height: 60px;
-    font-size: 24px;
-    right: 14px;
-    top: 14px;
-  }
-
-  /* טקסטים */
-  .project-title {
-    font-size: 22px;
-  }
-
-  .project-description {
-    font-size: 15px;
-    line-height: 1.65;
-  }
-
-  /* טאגים */
-  .tag {
-    font-size: 12px;
-    padding: 6px 12px;
-  }
-
-  /* כפתורים */
-  .project-actions {
-    flex-direction: column;
-    gap: 10px;
-  }
-  .btn {
-    width: 100%;
-    padding: 14px;
-    text-align: center;
-    font-size: 16px;
-  }
-
-  /* =========================== */
-  /* VIDEO MODAL — BIG FIX       */
-  /* =========================== */
-
-  .video-modal {
-    align-items: flex-start; /* שלא יחתך */
-    padding-top: 90px;
-  }
-
-  .video-center {
-    width: 55% !important;   /* רוחב מלא כמעט */
-    max-width: none;
-  }
-
-  .recommendation-video {
-    width: 100%;
-    border-radius: 14px;
-  }
-
-  /* כפתור X מותאם בצורה מקצועית */
-  .modal-close {
-    top: -55px;
-    right: -5px;
-    width: 42px;
-    height: 42px;
-    font-size: 22px;
-    background: var(--accent);
-    box-shadow: 0 10px 25px rgba(0,60,255,0.35);
-  }
+.theme-edi{
+  background:#ffffff;
+  box-shadow:0 18px 35px rgba(0,0,0,0.08);
+  border: 2px solid rgba(15,98,254,0.18);
 }
+
+.theme-edi .section-label{
+  background:rgba(15,98,254,0.12);
+  color:#0f62fe;
+}
+
+.theme-edi .project-image{
+  border: 2px solid #0f62fe;
+}
+
+.theme-edi .project-description{
+  color:#5f6a7a;
+}
+
+.theme-edi .tag{
+  background:#eef3ff;
+  color:#0641d8;
+}
+
+.theme-edi .btn-primary1{
+  background:linear-gradient(90deg, #0f62fe, #0030c9);
+  color:white;
+  box-shadow:0 12px 28px rgba(15,62,255,0.22);
+}
+
+.theme-edi .btn-outline1{
+  background:white;
+  color:#0030c9;
+  border:2px solid #0f62fe;
+}
+
+.theme-edi .modal-close{
+  background:#0f62fe;
+  color:white;
+}
+
+/* ================= THEME – TAFUR ALAICH ================= */
+
+.theme-feminine{
+  background:#ffffff;
+  box-shadow:0 18px 35px rgba(0,0,0,0.08);
+  border:2px solid rgba(241,91,181,0.18);
+}
+
+.theme-feminine .project-image{
+  border:2px solid #f15bb5;
+}
+
+.theme-feminine .project-description{
+  color:#5f6a7a;
+}
+
+.theme-feminine .tag{
+  background:rgba(241,91,181,0.12);
+  color:#9b5de5;
+}
+
+.theme-feminine .btn-feminine-primary{
+  background:linear-gradient(90deg, #9b5de5, #f15bb5);
+  color:white;
+  box-shadow:0 12px 30px rgba(155,93,229,0.35);
+}
+
 
 
 /* ================================ */
@@ -2059,6 +1980,102 @@ textarea {
   .btn.packages{
     width: 120px;
   }
+
+  /* SECTION */
+  .projects-section{
+    padding:60px 16px;
+    gap:32px;
+  }
+
+  .projects-container{
+    gap:32px;
+  }
+
+  /* TITLE */
+  .section-header{
+    margin-bottom:40px;
+  }
+
+  .section-title{
+    font-size:32px;
+    line-height:1.2;
+  }
+
+  .section-label{
+    font-size:12px;
+    padding:6px 14px;
+  }
+
+  .section-underline{
+    width:40%;
+  }
+
+  /* CARD */
+  .project-card{
+    width:95%;
+    padding:24px;
+    gap:28px;
+  }
+
+  /* MEDIA */
+  .project-image{
+    width:100%;
+    max-width:320px;
+  }
+
+  /* INFO */
+  .project-title{
+    font-size:22px;
+  }
+
+  .project-description{
+    font-size:15px;
+    line-height:1.7;
+  }
+
+  /* TAGS */
+  .project-tags{
+    gap:10px;
+  }
+
+  .tag{
+    font-size:12px;
+    padding:6px 12px;
+  }
+
+  /* BUTTONS */
+  .project-actions{
+    flex-direction:column;
+    gap:10px;
+    width:100%;
+  }
+
+  .btn{
+    width:100%;
+    padding:14px;
+    font-size:16px;
+    text-align:center;
+  }
+
+  /* VIDEO MODAL */
+  .video-modal{
+    align-items:flex-start;
+    padding-top:90px;
+  }
+
+  .video-center{
+    width:90%;
+    max-width:none;
+  }
+
+  .modal-close{
+    top:-55px;
+    right:0;
+    width:42px;
+    height:42px;
+    font-size:22px;
+  }
+
   .faq-section {
     padding: 60px 15px; /* פחות מרווחים */
   }
