@@ -766,6 +766,40 @@
 
   </footer>
 
+  <!-- COOKIE BAR -->
+  <div class="cookie-bar" id="cookieBar">
+    <div class="cookie-header">🍪 שימוש בעוגיות</div>
+    <div class="cookie-text">
+      האתר משתמש בעוגיות לשיפור חוויית המשתמש וניתוח סטטיסטי.
+    </div>
+    <div class="cookie-actions">
+      <button class="cookie-btn btn-accept" onclick="acceptAll()">קבל הכל</button>
+      <button class="cookie-btn btn-reject" onclick="rejectAll()">דחה</button>
+      <button class="cookie-btn btn-settings" onclick="openSettings()">הגדרות</button>
+    </div>
+  </div>
+
+  <!-- SETTINGS MODAL -->
+  <div class="cookie-modal" id="cookieModal">
+    <div class="cookie-modal-content">
+      <h3 style="color:#00e5ff;margin-top:0">העדפות עוגיות</h3>
+
+      <div class="cookie-option">
+        <span>עוגיות חיוניות</span>
+        <input type="checkbox" checked disabled>
+      </div>
+
+      <div class="cookie-option">
+        <span>סטטיסטיקה (Google Analytics)</span>
+        <input type="checkbox" id="analyticsCheckbox">
+      </div>
+
+      <button class="cookie-btn btn-accept" onclick="savePreferences()">
+        שמור העדפות
+      </button>
+    </div>
+  </div>
+
 
 
 

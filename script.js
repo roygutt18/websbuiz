@@ -252,3 +252,88 @@ function updateTextSize() {
   if (textSizeLevel === 1) document.documentElement.classList.add('large-text');
   if (textSizeLevel === 2) document.documentElement.classList.add('larger-text');
 }
+
+
+
+
+
+const STORAGE_KEY = "cookie-consent";
+  let gaLoaded = false;
+
+  function showBar() {
+    document.getElementById("cookieBar").style.display = "block";
+  }
+
+  function hideBar() {
+    document.getElementById("cookieBar").style.display = "none";
+  }
+
+  function openSettings() {
+    const saved = JSON.parse(localStorage.getItem(STORAGE_KEY));
+    if (saved) {
+      document.getElementById("analyticsCheckbox").checked = !!saved.analytics;
+    }
+    document.getElementById("cookieModal").style.display = "flex";
+  }
+
+  function closeSettings() {
+    document.getElementById("cookieModal").style.display = "none";
+  }
+
+  function acceptAll() {
+    saveConsent(true);
+  }
+
+  function rejectAll() {
+    saveConsent(false);
+  }
+
+  function savePreferences() {
+    const analytics = document.getElementById("analyticsCheckbox").checked;
+    saveConsent(analytics);
+  }
+
+  function saveConsent(analytics) {
+    const consent = {
+      essential: true,
+      analytics: analytics
+    };
+
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(consent));
+    closeSettings();
+    hideBar();
+
+    if (analytics) {
+      loadGoogleAnalytics();
+    }
+  }
+
+  function loadGoogleAnalytics() {
+    if (gaLoaded) return;
+    gaLoaded = true;
+
+    const script = document.createElement("script");
+    script.async = true;
+    script.src = "https://www.googletagmanager.com/gtag/js?id=G-KEK344KMNF";
+    document.head.appendChild(script);
+
+    script.onload = function () {
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      window.gtag = gtag;
+
+      gtag("js", new Date());
+      gtag("config", "G-KEK344KMNF", {
+        anonymize_ip: true
+      });
+    };
+  }
+
+  // INIT
+  const existingConsent = JSON.parse(localStorage.getItem(STORAGE_KEY));
+
+  if (!existingConsent) {
+    showBar();
+  } else if (existingConsent.analytics) {
+    loadGoogleAnalytics();
+  }
