@@ -107,10 +107,10 @@ section {
     background: rgb(255, 255, 255);
     flex-direction: column;
     justify-content: center;
-    gap: 15px;
+    gap: 10px;
     transition: left 0.3s ease;
     z-index: 1100 !important;
-    direction: rtl;
+    text-align: center;
     padding-left: 20px;
   }
 
@@ -1676,26 +1676,6 @@ textarea {
 .footer-legal a:hover {
   color: #ffffff;
 }
-
-/* ===== MOBILE ===== */
-@media (max-width: 768px) {
-  .footer-container {
-    grid-template-columns: 1fr;
-    gap: 2rem;
-  }
-
-  .footer-bottom {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .social-links {
-    justify-content: center;
-  }
-}
-
-
-
 @keyframes fadeUp {
   0% { transform: translateY(30px); opacity: 0; }
   100% { transform: translateY(0); opacity: 1; }
@@ -1723,12 +1703,12 @@ textarea {
   }
 
   .hero h1 {
-    font-size: 4rem;
+    font-size: 4.4rem;
     line-height: 1.25;
   }
 
   .hero p {
-    font-size: 1rem;
+    font-size: 1.2rem;
     margin-bottom: 0px;
   }
 
@@ -1741,7 +1721,7 @@ textarea {
 
   .btn.primary,.btn.secondary {
     padding: 12px;
-    font-size: 1rem;
+    font-size: 0.9rem;
     text-align: center;
     white-space: nowrap;
     width: max-content;
@@ -2116,6 +2096,21 @@ textarea {
   .whatsapp-button img {
     width: 28px;
     height: 28px;
+  }
+
+
+  .footer-container {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .social-links {
+    justify-content: center;
   }
 }
 
