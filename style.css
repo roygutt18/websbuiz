@@ -440,7 +440,7 @@ section {
 /* MOBILE */
 /* ============================= */
 
-@media (max-width: 900px) {
+@media (max-width: 768px) {
 
   .about-layout {
     grid-template-columns: 1fr;
@@ -465,6 +465,7 @@ section {
     border-radius: 0;
     box-shadow: none;
     filter: grayscale(20%) brightness(0.55);
+    width: 100vw;
   }
 
   /* שכבת כהות */
@@ -483,7 +484,7 @@ section {
   /* טקסט מעל התמונה */
   .about-text {
     position: relative;
-    z-index: 2;
+    z-index: 4;
     padding: 100px 24px 120px;
     max-width: none;
   }
