@@ -193,7 +193,7 @@ section {
    TITLES – גרדיאנט כחול כהה הולך ובא
 ========================================= */
 .hero h1 {
-  font-size: 7rem;
+  font-size: 5.5rem;
 
   background: linear-gradient(90deg, #002b5c, #007aff, #003a70);
   -webkit-background-clip: text;
@@ -1750,7 +1750,7 @@ textarea {
   }
 
   .hero h1 {
-    font-size: 4.4rem;
+    font-size: 3.8rem;
     line-height: 1.25;
   }
 
