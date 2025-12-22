@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+# קישור למפת האתר שלך
+Sitemap: https://websbuiz.com/sitemap.xml
