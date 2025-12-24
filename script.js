@@ -52,7 +52,7 @@ class Particle {
 }
 
 const particles = [];
-const particleCount = 18;
+const particleCount = 16;
 
 for (let i = 0; i < particleCount; i++){
   particles.push(new Particle());

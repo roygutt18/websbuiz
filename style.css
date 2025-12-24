@@ -352,7 +352,6 @@ section {
 
 .about-section {
   position: relative;
-  background: #ffffff;
   font-family: 'Inter', sans-serif;
   direction: rtl;
   padding: 120px 20px;
@@ -435,79 +434,6 @@ section {
   color: #2f3b50;
   margin-bottom: 26px;
 }
-
-/* ============================= */
-/* MOBILE */
-/* ============================= */
-
-@media (max-width: 768px) {
-
-  .about-layout {
-    grid-template-columns: 1fr;
-    gap: 0;
-  }
-
-  /* התמונה כרקע */
-  .about-image-stack {
-    position: absolute;
-    inset: 0;
-    max-width: none;
-    aspect-ratio: auto;
-    z-index: 0;
-  }
-
-  .image-back {
-    display: none;
-  }
-
-  .image-front {
-    transform: none;
-    border-radius: 0;
-    box-shadow: none;
-    filter: grayscale(20%) brightness(0.55);
-    width: 100vw;
-  }
-
-  /* שכבת כהות */
-  .about-section::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(
-      to bottom,
-      rgba(6, 16, 32, 0.4),
-      rgba(6, 16, 32, 0.4)
-    );
-    z-index: 1;
-  }
-
-  /* טקסט מעל התמונה */
-  .about-text {
-    position: relative;
-    z-index: 4;
-    padding: 100px 24px 120px;
-    max-width: none;
-  }
-
-  .about-title {
-    font-size: 2.2rem;
-    color: #ffffff;
-  }
-
-  .about-title span {
-    color: #abc8ff;
-    font-size: 140%;
-  }
-
-  .about-text p {
-    color: #e4ebf7;
-  }
-
-  .about-note {
-    color: #b9c7e6;
-  }
-}
-
 
 
 
@@ -1775,91 +1701,70 @@ textarea {
     justify-content: center;
   }
 
-  /* ABOUT US LIGHT */
-  .about-us-light-header h2 {
-    font-size: 2.8rem;
-  }
-
-  .about-us-light-header-line {
-    width: 100px;
-    height: 3px;
-    margin-bottom: 20px;
-  }
-
-  .about-us-light-header p {
-    font-size: 1rem;
-    max-width: 90%;
-  }
-
-  .about-content {
-    flex-direction: column;
-    align-items: center;
-    gap: 25px;
-    padding: 40px 20px;
-  }
-
-  .about-image-container {
-    margin: 0;
-    width: 140px;
-    height: 140px;
-  }
-
-  .about-text {
-    text-align: center;
-    font-size: 1.05rem;
-    max-width: 100%;
-  }
-
-  .about-us-light-features {
-    flex-direction: column;
-    align-items: center;
-    gap: 35px;
-    margin-bottom: 80px;
-  }
-
-  .about-us-light-feature {
-    flex-direction: column;
-    text-align: center;
-    gap: 15px;
-  }
-
-  .about-us-light-feature img {
-    width: 45px;
-  }
-
-  .about-us-light-feature h3 {
-    font-size: 1.3rem;
-  }
-
-  .about-us-light-feature p {
-    font-size: 0.95rem;
-  }
-
-  /* STATS */
-  .about-us-light-stats {
+  
+  .about-layout {
     grid-template-columns: 1fr;
-    gap: 25px;
+    gap: 0;
   }
 
-  .about-us-light-stat {
-    padding: 35px 20px;
+  /* התמונה כרקע */
+  .about-image-stack {
+    position: absolute;
+    inset: 0;
+    max-width: none;
+    aspect-ratio: auto;
+    z-index: 0;
   }
 
-  .stat-number {
+  .image-back {
+    display: none;
+  }
+
+  .image-front {
+    transform: none;
+    border-radius: 0;
+    box-shadow: none;
+    filter: grayscale(20%) brightness(0.55);
+    width: 100vw;
+  }
+
+  /* שכבת כהות */
+  .about-section::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      to bottom,
+      rgba(6, 16, 32, 0.4),
+      rgba(6, 16, 32, 0.4)
+    );
+    z-index: 1;
+  }
+
+  /* טקסט מעל התמונה */
+  .about-text {
+    position: relative;
+    z-index: 4;
+    padding: 100px 24px 120px;
+    max-width: none;
+  }
+
+  .about-title {
     font-size: 2.2rem;
+    color: #ffffff;
   }
 
-  .about-us-light-stat h4 {
-    font-size: 1.3rem;
+  .about-title span {
+    color: #abc8ff;
+    font-size: 140%;
   }
 
-  .about-us-light-stat p {
-    font-size: 0.9rem;
+  .about-text p {
+    color: #e4ebf7;
   }
 
-  .about-us-light-stat img {
-    width: 50px;
-    margin-bottom: 15px;
+  .about-note {
+    color: #b9c7e6;
   }
 
   /* FACT HIGHLIGHT */
