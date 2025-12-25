@@ -15,6 +15,52 @@ section {
   margin-bottom: 100px;
 }
 
+/* ================= CALL TO ACTION BUTTON ================= */
+.main-cta-btn {
+  padding: 14px 36px;
+  margin-top: 6px;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #fff;
+  background: linear-gradient(135deg, #0b5cff, #0041a3);
+  border-radius: 999px;
+  text-decoration: none;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.4s ease;
+}
+
+.main-cta-btn::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -75%;
+  width: 50%;
+  height: 100%;
+  background: rgba(255,255,255,0.3);
+  transform: skewX(-25deg);
+  transition: all 0.7s ease;
+}
+
+.main-cta-btn:hover::before {
+  left: 125%;
+}
+
+.main-cta-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 14px 35px rgba(11, 92, 255, 0.45);
+  background: linear-gradient(135deg, #0041a3, #0b5cff);
+}
+
+/* גרסת מובייל */
+@media (max-width: 768px) {
+  .cta-btn {
+    padding: 12px 28px;
+    font-size: 0.95rem;
+  }
+}
+
+
 /* ============================= */
 /* NAVBAR – CLEAN & RESPONSIVE   */
 /* ============================= */
@@ -943,6 +989,7 @@ section {
   }
 }
 
+
 /* ============================= */
 /* PRICING SECTION – CLEAN RTL */
 /* ============================= */
@@ -1792,11 +1839,11 @@ textarea {
   }
 
   .name {
-    font-size: 2.4rem;
+    font-size: 2.6rem;
   }
 
   .service {
-    font-size: 3rem;
+    font-size: 3.3rem;
   }
   .hero-desc {
     font-size: 1.05rem;
@@ -2587,47 +2634,3 @@ body.high-contrast svg {
   box-shadow: 0 6px 10px rgba(0,0,0,0.4);
 }
 
-/* ================= CALL TO ACTION BUTTON ================= */
-.main-cta-btn {
-  padding: 14px 36px;
-  margin-top: 6px;
-  font-size: 1rem;
-  font-weight: 600;
-  color: #fff;
-  background: linear-gradient(135deg, #0b5cff, #0041a3);
-  border-radius: 999px;
-  text-decoration: none;
-  position: relative;
-  overflow: hidden;
-  transition: all 0.4s ease;
-}
-
-.main-cta-btn::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: -75%;
-  width: 50%;
-  height: 100%;
-  background: rgba(255,255,255,0.3);
-  transform: skewX(-25deg);
-  transition: all 0.7s ease;
-}
-
-.main-cta-btn:hover::before {
-  left: 125%;
-}
-
-.main-cta-btn:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 14px 35px rgba(11, 92, 255, 0.45);
-  background: linear-gradient(135deg, #0041a3, #0b5cff);
-}
-
-/* גרסת מובייל */
-@media (max-width: 768px) {
-  .cta-btn {
-    padding: 12px 28px;
-    font-size: 0.95rem;
-  }
-}
