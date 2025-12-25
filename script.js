@@ -31,8 +31,8 @@ class Particle {
   constructor() {
     this.x = Math.random() * width;
     this.y = Math.random() * height;
-    this.vx = (Math.random() - 0.5) * 1.8;
-    this.vy = (Math.random() - 0.5) * 1.8;
+    this.vx = (Math.random() - 0.5) * 4;
+    this.vy = (Math.random() - 0.5) * 4;
     this.radius = 2 + Math.random() * 2;
   }
   
@@ -52,7 +52,7 @@ class Particle {
 }
 
 const particles = [];
-const particleCount = 16;
+const particleCount = 12;
 
 for (let i = 0; i < particleCount; i++){
   particles.push(new Particle());

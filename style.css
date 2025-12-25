@@ -108,7 +108,7 @@ section {
     flex-direction: column;
     justify-content: center;
     gap: 10px;
-    transition: left 0.3s ease;
+    transition: left 1s ease;
     z-index: 1100 !important;
     text-align: center;
     padding-left: 20px;
@@ -162,186 +162,175 @@ section {
 }
 
 
-/* =========================================
-   HERO – רקע שקוף (דף לבן מאחור)
-========================================= */
+/* ===============================
+   HERO – בסיס
+================================ */
 .hero {
-  height: 100vh;
+  min-height: 100vh;
   display: flex;
-  justify-content: center;
   align-items: center;
-  background: transparent;
+  justify-content: center;
   position: relative;
-  overflow: visible;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  overflow: hidden;
 }
 
-/* =========================================
-   HERO CONTENT
-========================================= */
-.hero-content {
+/* ===============================
+   INNER
+================================ */
+.hero-inner {
+  max-width: 820px;
+  padding: 24px;
   text-align: center;
-  color: #0a1a2f; /* כחול כהה על רקע לבן */
-  position: relative;
-  z-index: 2;
-  padding: 20px;
   display: flex;
   flex-direction: column;
-  gap: 30px;
+  gap: 28px;
+  position: relative;
+  z-index: 2;
 }
 
-/* =========================================
-   TITLES – גרדיאנט כחול כהה הולך ובא
-========================================= */
-.hero h1 {
-  font-size: 5.2rem;
-
-  background: linear-gradient(90deg, #002b5c, #007aff, #003a70);
-  -webkit-background-clip: text;
-  color: transparent;
-  background-size: 200%;
-  animation: titleFlow 4.5s ease-in-out infinite;
-  max-width: 850px;
+/* ===============================
+   TITLE
+================================ */
+.hero-title {
+  font-size: 4.5rem;
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: -0.025em;
+  color: #000;
 }
 
-@keyframes titleFlow {
-  0% { background-position: 0%; }
-  100% { background-position: 200%; }
+.hero-title span {
+  font-weight: 400;
+  color: #0049db;
+  font-size: 3.8rem;
 }
 
-/* =========================================
-   SUBTEXT
-========================================= */
-.hero p {
-  font-size: 1.3rem;
-  opacity: 0.85;
-  max-width: 700px;
-  margin: auto;
+/* ===============================
+   DESCRIPTION
+================================ */
+.hero-description {
+  font-size: 1.15rem;
+  line-height: 1.75;
+  color: #1f2937;
+  max-width: 620px;
+  margin: 0 auto;
 }
 
-/* =========================================
-   כלל כפתורים – בסיס מתקדם
-========================================= */
-.hero-buttons {
+/* ===============================
+   ACTIONS
+================================ */
+.hero-actions {
   display: flex;
-  gap: 30px;
   align-items: center;
   justify-content: center;
+  gap: 26px;
+  margin-top: 8px;
 }
 
-.btn {
-  padding: 15px 44px;
-  border-radius: 40px;
-  font-size: 1.15rem;
+/* ===============================
+   MAIN BUTTON – אלגנטי עם אפקט מיוחד
+================================ */
+.btn-main {
+  padding: 14px 34px;
+  font-size: 0.95rem;
   font-weight: 600;
+  color: #fff;
+  background: linear-gradient(135deg, #0b5cff, #0041a3);
+  border-radius: 999px;
   text-decoration: none;
   position: relative;
   overflow: hidden;
-  cursor: pointer;
-  user-select: none;
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-  transition: 0.35s cubic-bezier(.25,.65,.45,1);
-  transform-style: preserve-3d;
+  transition: all 0.4s ease;
 }
 
-/* =========================================
-   PRIMARY – גרדיאנט טכנולוגי + עומק
-========================================= */
-.btn.primary {
-  background: linear-gradient(135deg, #006CFF, #0048A5, #003577);
-  color: #ffffff;
-  box-shadow: 0 7px 20px rgba(0, 110, 255, 0.30);
-  border: none;
-}
-
-/* 🔵 אפקט היילייט צד יוקרתי */
-.btn.primary::before {
+.btn-main::before {
   content: "";
   position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    90deg,
-    transparent 0%,
-    rgba(255,255,255,0.35) 50%,
-    transparent 100%
-  );
-  transform: translateX(-120%);
-  transition: 0.55s ease-in-out;
+  top: 0;
+  left: -75%;
+  width: 50%;
+  height: 100%;
+  background: rgba(255,255,255,0.3);
+  transform: skewX(-25deg);
+  transition: all 0.7s ease;
 }
 
-/* Hover – הכול קורה כאן */
-.btn.primary:hover {
-  transform: scale(1.08) translateY(-3px);
-  box-shadow:
-    0 14px 40px rgba(0, 110, 255, 0.55),
-    0 0 35px rgba(0, 160, 255, 0.45);
-  background-position: 120% center;
+.btn-main:hover::before {
+  left: 125%;
 }
 
-/* היילייט מחליק פנימה */
-.btn.primary:hover::before {
-  transform: translateX(120%);
+.btn-main:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 14px 35px rgba(11, 92, 255, 0.45);
+  background: linear-gradient(135deg, #0041a3, #0b5cff);
 }
 
-/* =========================================
-   SECONDARY – גלאס טכנולוגי + ניאון עדין
-========================================= */
-.btn.secondary {
-  background: rgba(0, 80, 160, 0.10);
-  border: 2px solid rgba(0, 120, 255, 0.35);
-  color: #003366;
-  backdrop-filter: blur(10px);
-  box-shadow: 0 8px 20px rgba(0,50,130,0.15);
+/* ===============================
+   LINK BUTTON – פרימיום עם אפקט מגניב
+================================ */
+.btn-link {
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: #0b5cff;
+  text-decoration: none;
   position: relative;
+  border: 2px solid #0b5cff;
+  padding: 14px 34px;
+  border-radius: 999px;
+  overflow: hidden;
+  transition: all 0.4s ease;
 }
 
-/* ניאון צדדי רך */
-.btn.secondary::before {
+.btn-link::after {
   content: "";
   position: absolute;
-  inset: 0;
-  border-radius: inherit;
-  background: linear-gradient(
-    135deg,
-    rgba(0,120,255,0.2),
-    transparent 60%
-  );
-  opacity: 0;
-  transition: 0.45s ease;
-}
-
-/* Hover – עומק + ניאון */
-.btn.secondary:hover {
-  transform: scale(1.07) translateY(-3px);
-  box-shadow: 
-    0 14px 38px rgba(0, 80, 160, 0.28),
-    0 0 20px rgba(0, 150, 255, 0.35);
-  border-color: rgba(0, 140, 255, 0.65);
-}
-
-.btn.secondary:hover::before {
-  opacity: 1;
-}
-
-/* =========================================
-   אפקט קליק – Ripple לבן עדין
-========================================= */
-.btn:active::after {
-  content: "";
-  position: absolute;
-  width: 170%;
-  height: 170%;
-  background: rgba(255, 255, 255, 0.35);
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  background: rgba(11, 92, 255, 0.2);
   border-radius: 50%;
-  transform: scale(0);
-  animation: rippleNew 0.45s ease-out;
-  z-index: 1;
+  transform: translate(-50%, -50%);
+  transition: width 0.5s ease, height 0.5s ease;
 }
 
-@keyframes rippleNew {
-  to { transform: scale(1); opacity: 0; }
+.btn-link:hover::after {
+  width: 300%;
+  height: 300%;
 }
+
+.btn-link:hover {
+  color: #fff;
+  background-color: #0b5cff;
+  border-color: #0b5cff;
+  box-shadow: 0 8px 25px rgba(11, 92, 255, 0.4);
+  transform: translateY(-2px);
+}
+
+
+/* ===============================
+   RESPONSIVE
+================================ */
+@media (max-width: 768px) {
+  .hero {
+    margin-top: 40px;
+  }
+  .hero-title {
+    font-size: 3.5rem;
+  }
+  .hero-title span {
+    font-size: 2.2rem;
+  }
+  .hero-description {
+    font-size: 1.1rem;
+  }
+
+  .hero-actions {
+    gap: 16px;
+  }
+}
+
 
 
 
@@ -1658,50 +1647,7 @@ textarea {
 /* ============================= */
 /* RESPONSIVE – UP TO 780PX      */
 /* ============================= */
-@media (max-width: 780px) {
-  /* HERO SECTION */
-  .hero {
-    height: auto;
-    min-height: 100vh;
-    padding: 120px 20px 80px 20px;
-    padding-top: 60px;
-    justify-content: center;
-    text-align: center;
-    background-attachment: scroll;
-  }
-
-  .hero-content {
-    max-width: 100%;
-    margin: auto;
-  }
-
-  .hero h1 {
-    font-size: 3.6rem;
-    line-height: 1.25;
-  }
-
-  .hero p {
-    font-size: 1.2rem;
-    margin-bottom: 0px;
-  }
-
-  .hero-buttons {
-    display: flex;
-    gap: 8px;
-    align-items: center;
-    flex-wrap: nowrap;
-  }
-
-  .btn.primary,.btn.secondary {
-    padding: 12px;
-    font-size: 0.9rem;
-    text-align: center;
-    white-space: nowrap;
-    width: max-content;
-    justify-content: center;
-  }
-
-  
+@media (max-width: 780px) {  
   .about-layout {
     grid-template-columns: 1fr;
     gap: 0;
