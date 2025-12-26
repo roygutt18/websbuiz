@@ -1839,11 +1839,11 @@ textarea {
   }
 
   .name {
-    font-size: 2.6rem;
+    font-size: 2.85rem;
   }
 
   .service {
-    font-size: 3.3rem;
+    font-size: 3.6rem;
   }
   .hero-desc {
     font-size: 1.05rem;
@@ -2268,7 +2268,7 @@ textarea {
 .accessibility-widget {
   position: fixed;
   bottom: 10px;
-  right: 10px;
+  right: 20px;
   z-index: 3000;
   font-family: var(--font-primary);
 }
@@ -2473,8 +2473,8 @@ body.high-contrast svg {
 /* ===== COOKIE BAR ===== */
   .cookie-bar {
     position: fixed;
-    bottom: 16px;
-    left: 16px;
+    bottom: 10px;
+    left: 20px;
     right: 16px;
     max-width: 900px;
     margin: auto;
@@ -2611,7 +2611,7 @@ body.high-contrast svg {
 .whatsapp-button {
   position: fixed;
   bottom: 10px;
-  left: 10px;
+  left: 20px;
   width: 45px;
   height: 45px;
   z-index: 1000;
