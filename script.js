@@ -348,11 +348,12 @@ emailjs.init("SwP5gNyPiaOwSkX2q"); // המפתח הציבורי שלך
 function handleFormSubmit(formSelector, statusSelector) {
   const form = document.querySelector(formSelector);
   const status = document.querySelector(statusSelector);
+  status.textContent = "";
 
   form.addEventListener("submit", function(e) {
     e.preventDefault();
 
-    emailjs.sendForm("YOUR_SERVICE_ID", "YOUR_TEMPLATE_ID", form)
+    emailjs.sendForm("service_w5e5zyw", "template_vl96hr9", form)
       .then(() => {
         status.textContent = "ההודעה נשלחה בהצלחה!";
         status.style.color = "green";

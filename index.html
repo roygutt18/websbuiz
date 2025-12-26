@@ -750,23 +750,24 @@
 
           <div class="form-group">
             <label for="name">שם</label>
-            <input type="text" id="name" placeholder="השם שלך" required>
+            <input type="text" id="name" name="name" placeholder="השם שלך" required>
           </div>
 
           <div class="form-group">
             <label for="email">אימייל</label>
-            <input type="email" id="email" placeholder="האימייל שלך" required>
+            <input type="email" id="email" name="email" placeholder="האימייל שלך" required>
           </div>
 
           <div class="form-group">
             <label for="message">הודעה</label>
-            <textarea id="message" placeholder="ספר לי על הפרויקט שלך..." required></textarea>
+            <textarea id="message" name="message" placeholder="ספר לי על הפרויקט שלך..." required></textarea>
           </div>
 
           <button type="submit" class="form-submit">שלח הודעה</button>
+          <p id="formStatus"></p>
         </form>
         
-        <p id="formStatus"></p>
+        
       </div>
     </section>
 
