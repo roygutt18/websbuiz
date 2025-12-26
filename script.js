@@ -337,3 +337,34 @@ const STORAGE_KEY = "cookie-consent";
   } else if (existingConsent.analytics) {
     loadGoogleAnalytics();
   }
+
+
+
+
+
+
+emailjs.init("SwP5gNyPiaOwSkX2q"); // המפתח הציבורי שלך
+
+function handleFormSubmit(formSelector, statusSelector) {
+  const form = document.querySelector(formSelector);
+  const status = document.querySelector(statusSelector);
+
+  form.addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    emailjs.sendForm("YOUR_SERVICE_ID", "YOUR_TEMPLATE_ID", form)
+      .then(() => {
+        status.textContent = "ההודעה נשלחה בהצלחה!";
+        status.style.color = "green";
+        form.reset();
+      }, (error) => {
+        status.textContent = "שגיאה בשליחת ההודעה. נסה שוב.";
+        status.style.color = "red";
+        console.error(error);
+      });
+  });
+}
+
+// הפעלת הפונקציה על הטפסים עם אלמנט סטטוס מתאים
+handleFormSubmit(".contact-card", "#formStatus");
+handleFormSubmit(".footer-form", ".footer-form-note"); // תוסיף <p class="footer-form-note"></p> מתחת לטופס בפוטר
