@@ -1,16 +1,20 @@
 const hamburger = document.querySelector('.hamburger');
-const navLinks = document.querySelector('.nav-links');
-const overlay = document.querySelector('.overlay');
+const mobileMenu = document.querySelector('.mobile-menu');
+const mobileOverlay = document.querySelector('.mobile-overlay');
+const mobileLinks = document.querySelectorAll('.mobile-menu a');
 
 hamburger.addEventListener('click', () => {
-  navLinks.classList.toggle('active');
-  overlay.classList.toggle('active');
+  mobileMenu.classList.toggle('active');
+  mobileOverlay.classList.toggle('active');
 });
 
-overlay.addEventListener('click', () => {
-  navLinks.classList.remove('active');
-  overlay.classList.remove('active');
-});
+mobileOverlay.addEventListener('click', closeMobileMenu);
+mobileLinks.forEach(link => link.addEventListener('click', closeMobileMenu));
+
+function closeMobileMenu() {
+  mobileMenu.classList.remove('active');
+  mobileOverlay.classList.remove('active');
+}
 
 
 const canvas = document.getElementById('particleCanvas');
