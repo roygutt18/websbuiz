@@ -6,6 +6,7 @@
 }
 body {
   overflow-x: hidden;
+  direction: rtl;
 }
 html {
   scroll-behavior: smooth;
@@ -137,6 +138,7 @@ section {
   border-radius: 2px;
   transition: all 0.3s ease;
   z-index: 1300 !important;
+  display: none;
 }
 .mobile-menu {
   position: fixed;
@@ -152,6 +154,8 @@ section {
   transition: right 0.4s ease;
   z-index: 1200 !important;
 }
+
+
 
 .mobile-menu a {
   padding: 16px;
@@ -698,7 +702,7 @@ section {
 
 .services-title {
   font-size: 3.8rem;
-  font-weight: 800;
+  font-weight: 700;
   color: #002a61;
   margin-bottom: 15px;
 }
@@ -863,8 +867,8 @@ section {
 }
 
 .timeline-header h2 {
-  font-size: 3.8rem;
-  font-weight: 800;
+  font-size: 3.6rem;
+  font-weight: 700;
   margin-bottom: 20px;
   
 }
@@ -1311,8 +1315,8 @@ section {
 }
 
 .section-title{
-  font-size:4rem;
-  font-weight:800;
+  font-size:3.8rem;
+  font-weight:700;
   margin:18px 0 12px;
   letter-spacing:-1px;
 }
@@ -1884,7 +1888,10 @@ textarea {
 /* ============================= */
 /* RESPONSIVE – UP TO 780PX      */
 /* ============================= */
-@media (max-width: 780px) {  
+@media (max-width: 780px) {
+  .hamburger span{
+    display: flex;
+  }
   .hamburger {
     display: flex;
     z-index: 1200;
@@ -2694,4 +2701,3 @@ body.high-contrast svg {
   transform: scale(1.1);
   box-shadow: 0 6px 10px rgba(0,0,0,0.4);
 }
-
