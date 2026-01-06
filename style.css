@@ -1129,7 +1129,7 @@ section {
   transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   text-align: right;
   width: 100%;
-  border: 1px solid rgba(0, 0, 0, 0.03);
+  border: 1px solid rgba(0, 0, 0, 0.2);
   position: relative;
   display: flex;
   flex-direction: column;
@@ -2494,6 +2494,10 @@ body.high-contrast svg {
 
   .entry-title {
     font-size: 2.8rem;
+  }
+  .entry-description {
+    font-size: 1.1rem;
+    text-align: right;
   }
 }
 
