@@ -1,27 +1,27 @@
+/* ============================================================
+   DESIGN TOKENS & VARIABLES
+   ============================================================ */
 :root {
-  /* === Color Palette === */
+  /* Colors */
   --color-primary: #0b5cff;
   --color-primary-dark: #0041a3;
   --color-secondary: #020617;
-  /* Dark Navy for contrast */
   --color-text: #334155;
-  /* Slate 700 for softer reading */
   --color-text-light: #64748b;
   --color-bg-light: #f8fafc;
   --color-white: #ffffff;
 
-  /* === Typography === */
+  /* Typography */
   --font-primary: 'Heebo', sans-serif;
   --font-secondary: 'Outfit', sans-serif;
-  /* For English/Numbers */
 
-  /* === Spacing & Radius === */
+  /* Spacing & Borders */
   --spacing-section: 140px;
   --spacing-element: 24px;
   --radius-card: 24px;
   --radius-btn: 999px;
 
-  /* === Shadows & Effects === */
+  /* Effects & Transitions */
   --shadow-premium: 0 10px 30px -5px rgba(0, 0, 0, 0.1), 0 4px 12px -2px rgba(0, 0, 0, 0.05);
   --shadow-deep: 0 30px 60px -12px rgba(0, 0, 0, 0.15), 0 18px 36px -18px rgba(0, 0, 0, 0.2);
   --shadow-button: 0 8px 20px -4px rgba(11, 92, 255, 0.3);
@@ -30,6 +30,9 @@
   --transition-spring: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 
+/* ============================================================
+   BASE ELEMENT STYLES
+   ============================================================ */
 * {
   margin: 0;
   padding: 0;
@@ -55,7 +58,9 @@ section {
   margin-bottom: var(--spacing-section);
 }
 
-/* ================= CALL TO ACTION BUTTON ================= */
+/* ============================================================
+   GLOBAL UTILITY COMPONENTS
+   ============================================================ */
 .main-cta-btn {
   padding: 14px 36px;
   margin-top: 6px;
@@ -92,18 +97,11 @@ section {
   background: linear-gradient(135deg, #0041a3, #0b5cff);
 }
 
-/* גרסת מובייל */
-@media (max-width: 768px) {
-  .cta-btn {
-    padding: 12px 28px;
-    font-size: 0.95rem;
-  }
-}
 
 
-/* ============================= */
-/* NAVBAR – MODERN PREMIUM       */
-/* ============================= */
+/* ============================================================
+   NAVBAR (DESKTOP)
+   ============================================================ */
 .navbar {
   position: fixed;
   top: 0;
@@ -122,6 +120,7 @@ section {
   transition: all 0.4s ease;
 }
 
+/* Logo */
 .logo {
   font-family: var(--font-secondary);
   letter-spacing: 1.5px;
@@ -131,22 +130,20 @@ section {
   justify-self: flex-start;
 }
 
-/* החלק הראשי */
 .logo-main {
   font-size: 2.2rem;
   font-weight: 900;
-  color: var(--color-secondary);
+  color: black;
 }
 
-/* החלק המשני */
 .logo-sub {
   font-size: 1.9rem;
-  font-weight: 500;
+  font-weight: 300;
   margin-left: 2px;
-
+  color: black;
 }
 
-/* NAV LINKS – Desktop */
+/* Nav links */
 .nav-links {
   display: flex;
   gap: 40px;
@@ -180,23 +177,25 @@ section {
   width: 100%;
 }
 
-/* HAMBURGER – hidden desktop */
+/* ============================================================
+   MOBILE NAVIGATION & OVERLAY
+   ============================================================ */
 .hamburger {
   display: none;
   flex-direction: column;
   gap: 6px;
   cursor: pointer;
-  z-index: 1300 !important;
+  position: fixed;
+  top: 30px;
+  right: 40px;
+  z-index: 2000;
 }
 
 .hamburger span {
   width: 28px;
   height: 3px;
-  background: #000000;
+  background: #000;
   border-radius: 2px;
-  transition: all 0.3s ease;
-  z-index: 1300 !important;
-  display: none;
 }
 
 .mobile-menu {
@@ -205,16 +204,14 @@ section {
   right: -260px;
   width: 260px;
   height: 100vh;
-  background: #ffffff;
+  background: #fff;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  gap: 6px;
+  gap: 8px;
   transition: right 0.4s ease;
-  z-index: 1200 !important;
+  z-index: 1500;
 }
-
-
 
 .mobile-menu a {
   padding: 16px;
@@ -234,62 +231,6 @@ section {
   right: 0;
 }
 
-/* Overlay */
-.mobile-overlay {
-  position: fixed;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.15);
-  opacity: 0;
-  visibility: hidden;
-  transition: 0.3s;
-  z-index: 1000 !important;
-}
-
-.mobile-overlay.active {
-  opacity: 1;
-  visibility: visible;
-}
-
-
-/* Hamburger – תמיד מעל כולם */
-.hamburger {
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-  cursor: pointer;
-  position: fixed;
-  /* חשוב – נשאר תמיד במקום */
-  top: 30px;
-  right: 40px;
-  z-index: 2000;
-  /* הכי גבוה */
-}
-
-.hamburger span {
-  width: 28px;
-  height: 3px;
-  background: #000;
-  border-radius: 2px;
-}
-
-/* Mobile menu */
-.mobile-menu {
-  position: fixed;
-  top: 0;
-  right: -260px;
-  width: 260px;
-  height: 100vh;
-  background: #fff;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  gap: 8px;
-  transition: right 0.4s ease;
-  z-index: 1500;
-  /* נמוך מההמבורגר */
-}
-
-/* Overlay */
 .mobile-overlay {
   position: fixed;
   inset: 0;
@@ -298,12 +239,6 @@ section {
   visibility: hidden;
   transition: 0.3s;
   z-index: 1400;
-  /* נמוך מההמבורגר */
-}
-
-/* כשהתפריט פעיל */
-.mobile-menu.active {
-  right: 0;
 }
 
 .mobile-overlay.active {
@@ -311,8 +246,7 @@ section {
   visibility: visible;
 }
 
-
-/* Particle canvas */
+/* Background particles */
 #particleCanvas {
   position: fixed;
   top: 0;
@@ -323,9 +257,9 @@ section {
 }
 
 
-/* ===============================
-   HERO – בסיס
-================================ */
+/* ============================================================
+   HERO SECTION
+   ============================================================ */
 .hero {
   min-height: 100vh;
   display: flex;
@@ -345,9 +279,7 @@ section {
   z-index: 2;
 }
 
-/* ===============================
-   TITLE – שתי שורות עם הבדלים גדולים
-================================ */
+/* Title & Typography */
 .title {
   display: flex;
   flex-direction: column;
@@ -356,14 +288,12 @@ section {
   margin-bottom: 32px;
 }
 
-/* שורה כללית */
 .line {
   display: inline-block;
   direction: rtl;
   line-height: 1.1;
 }
 
-/* שורה 1 – שם */
 .name {
   font-size: clamp(2.4rem, 4.5vw, 3.4rem);
   font-weight: 600;
@@ -371,7 +301,6 @@ section {
   letter-spacing: 0.02em;
 }
 
-/* שורה 2 – שירות */
 .service {
   font-size: clamp(3.6rem, 7vw, 5.2rem);
   font-weight: 700;
@@ -379,24 +308,18 @@ section {
   letter-spacing: -0.02em;
 }
 
-/* ===============================
-   DOTS – בסוף השורה
-================================ */
 .dot {
   margin-left: 6px;
-  /* בסוף המשפט בעברית */
   font-size: 1em;
   vertical-align: baseline;
 }
 
 .dot1 {
   color: #000000;
-  /* כחול חזק */
 }
 
 .dot2 {
   color: #0073ff;
-  /* כחול בהיר */
 }
 
 /* ===============================
@@ -534,10 +457,9 @@ section {
 
 
 
-/* ============================= */
-/* ABOUT SECTION – MODERNIZED    */
-/* ============================= */
-
+/* ============================================================
+   ABOUT SECTION
+   ============================================================ */
 .about-section {
   position: relative;
   font-family: var(--font-primary);
@@ -545,10 +467,6 @@ section {
   padding: var(--spacing-section) 24px;
   overflow: hidden;
 }
-
-/* ============================= */
-/* LAYOUT */
-/* ============================= */
 
 .about-layout {
   max-width: 1250px;
@@ -559,10 +477,7 @@ section {
   align-items: center;
 }
 
-/* ============================= */
-/* IMAGE STACK – DESKTOP */
-/* ============================= */
-
+/* Image Stack */
 .about-image-stack {
   position: relative;
   width: 100%;
@@ -570,7 +485,6 @@ section {
   aspect-ratio: 3 / 4;
 }
 
-/* ריבוע אחורי – עיצוב חדש */
 .image-back {
   position: absolute;
   inset: 0;
@@ -580,7 +494,6 @@ section {
   transform: translate(30px, 30px);
 }
 
-/* התמונה */
 .image-front {
   position: absolute;
   inset: 0;
@@ -597,10 +510,7 @@ section {
   transform: rotate(-1deg) scale(1.02);
 }
 
-/* ============================= */
-/* TEXT */
-/* ============================= */
-
+/* Content Area */
 .about-text {
   max-width: 600px;
 }
@@ -623,7 +533,6 @@ section {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   color: var(--color-primary);
-  /* Fallback */
 }
 
 .about-text p {
@@ -634,10 +543,9 @@ section {
 }
 
 
-/* ============================= */
-/* WHY CHOOSE US – MODERN        */
-/* ============================= */
-
+/* ============================================================
+   WHY CHOOSE US SECTION
+   ============================================================ */
 .why-choose {
   padding: 60px 35px;
   position: relative;
@@ -665,7 +573,7 @@ section {
   padding: 50px 30px;
   border-radius: var(--radius-card);
   background: var(--color-white);
-  box-shadow: var(--shadow-soft);
+  box-shadow: var(--shadow-sm);
   transition: var(--transition-smooth);
   position: relative;
   border: 1px solid rgba(0, 0, 0, 0.03);
@@ -677,7 +585,7 @@ section {
   border-color: rgba(11, 92, 255, 0.1);
 }
 
-/* אייקונים – יותר נקי ועדין */
+/* Icons */
 .feature-icon {
   width: 70px;
   height: 70px;
@@ -698,24 +606,7 @@ section {
   color: var(--color-primary-dark);
 }
 
-/* טקסט כרטיסיות */
-.feature-card h3 {
-  font-size: 1.6rem;
-  color: var(--color-secondary);
-  margin-bottom: 12px;
-  font-weight: 700;
-}
-
-.feature-card p {
-  font-size: 1.05rem;
-  color: var(--color-text);
-  line-height: 1.7;
-}
-
-/* ============================= */
-/* STATS – נקי ומאוזן */
-/* ============================= */
-
+/* Stats */
 .stats-grid {
   display: flex;
   flex-wrap: wrap;
@@ -729,7 +620,7 @@ section {
   padding: 50px 24px;
   border-radius: var(--radius-card);
   background: white;
-  box-shadow: var(--shadow-soft);
+  box-shadow: var(--shadow-sm);
   transition: var(--transition-smooth);
   border: 1px solid rgba(0, 0, 0, 0.03);
 }
@@ -756,10 +647,9 @@ section {
   font-weight: 600;
 }
 
-/* ============================= */
-/* HIGHLIGHT SECTION – Clean + Simple Spans */
-/* ============================= */
-
+/* ============================================================
+   HIGHLIGHT SECTION
+   ============================================================ */
 .highlight-section {
   padding: 40px 20px;
   display: flex;
@@ -776,26 +666,21 @@ section {
   color: #2c3748;
   text-align: center;
   direction: rtl;
-  unicode-bidi: embed;
-  transition: 0.3s ease;
 }
 
 .highlight-inner:hover {
   transform: translateX(-5px);
 }
 
-/* שני סוגי ספאנים בלבד */
 .highlight-inner .important {
   font-weight: 700;
   color: #0054cc;
-  /* כחול כהה */
 }
 
 
-/* ================================ 
-   SERVICES SECTION – RTL MODERN
-=================================== */
-
+/* ============================================================
+   SERVICES SECTION
+   ============================================================ */
 .services-section {
   padding: var(--spacing-section) 60px;
 }
@@ -904,19 +789,6 @@ section {
   margin-bottom: 20px;
 }
 
-.service-link {
-  font-size: 15px;
-  font-weight: 600;
-  color: #0050ab;
-  text-decoration: none;
-  transition: 0.3s ease;
-}
-
-.service-link:hover {
-  color: #002a61;
-  text-decoration: underline;
-}
-
 .services-cta {
   display: flex;
   flex-direction: column;
@@ -968,46 +840,28 @@ section {
   background: linear-gradient(135deg, #0041a3, #0b5cff);
 }
 
-/* גרסת מובייל */
-@media (max-width: 768px) {
-  .services-cta {
-    margin: 20px 0;
-    gap: 10px;
-  }
 
-  .services-cta .cta-text {
-    font-size: 1rem;
-  }
-
-  .services-cta .btn-main {
-    padding: 12px 28px;
-    font-size: 0.95rem;
-  }
-}
-
-/* ============================= */
-/* TIMELINE SECTION */
-/* ============================= */
+/* ============================================================
+   TIMELINE SECTION (HOW IT WORKS)
+   ============================================================ */
 .timeline-section {
   padding: 150px 20px;
-  font-family: "Segoe UI";
+  font-family: var(--font-primary);
 }
 
-/* HEADER */
 .timeline-header {
   text-align: center;
   margin: 0 auto 90px;
 }
 
 .timeline-header h2 {
-  font-family: var(--font-secondary);
   font-size: 3.6rem;
   font-weight: 700;
   margin-bottom: 20px;
+  color: black;
 }
 
 .timeline-header p {
-  font-family: var(--font-secondary);
   font-size: 1.25rem;
   color: #555;
   line-height: 1.8;
@@ -1090,14 +944,13 @@ section {
 }
 
 .timeline-content h3 {
-  font-family: var(--font-secondary);
+  color: black;
   font-size: 1.7rem;
   font-weight: bold;
   margin-bottom: 12px;
 }
 
 .timeline-content p {
-  font-family: var(--font-secondary);
   font-size: 1.0rem;
   color: #424242;
   line-height: 1.7;
@@ -1226,27 +1079,11 @@ section {
   background: linear-gradient(135deg, #0041a3, #0b5cff);
 }
 
-/* גרסת מובייל */
-@media (max-width: 768px) {
-  .timeline-cta {
-    margin: 20px 0;
-    gap: 10px;
-  }
-
-  .timeline-cta .cta-text {
-    font-size: 1rem;
-  }
-
-  .timeline-cta .btn-main {
-    padding: 12px 28px;
-    font-size: 0.95rem;
-  }
-}
 
 
-/* ============================= */
-/* PRICING SECTION – CLEAN RTL */
-/* ============================= */
+/* ============================================================
+   PRICING SECTION (PACKAGES)
+   ============================================================ */
 .pricing-section {
   padding: var(--spacing-section) 20px;
   font-family: var(--font-primary);
@@ -1387,7 +1224,7 @@ section {
   box-shadow: 0 10px 25px rgba(11, 92, 255, 0.3);
 }
 
-/* מחירים באותה שורה */
+/* Prices & Disounts */
 .price-row {
   display: flex;
   align-items: center;
@@ -1396,7 +1233,6 @@ section {
   position: relative;
 }
 
-/* מחיר ישן */
 .old-price {
   font-size: 1.3rem;
   color: #94a3b8;
@@ -1405,21 +1241,6 @@ section {
   position: relative;
 }
 
-/* תגית הנחה */
-.discount-badge {
-  position: absolute;
-  top: -10px;
-  right: -40px;
-  background: rgb(255, 0, 0);
-  color: white;
-  font-size: 14px;
-  padding: 4px 10px;
-  border-radius: 8px;
-  font-weight: 700;
-  transform: rotate(15deg);
-}
-
-/* מחיר חדש */
 .new-price {
   font-size: 2.2rem;
   font-weight: 800;
@@ -1527,8 +1348,10 @@ section {
   width: 100%;
   aspect-ratio: 16 / 10;
   overflow: hidden;
-  border-radius: 4px;
+  border-radius: 12px;
+  /* Subtly rounded corners */
   box-shadow: 0 40px 100px -20px rgba(0, 0, 0, 0.15);
+  transition: transform 0.6s var(--transition-spring);
 }
 
 .entry-image {
@@ -1689,71 +1512,11 @@ section {
 }
 
 /* RESPONSIVE PORTFOLIO */
-@media (max-width: 1100px) {
-  .header-main-title {
-    font-size: 4rem;
-  }
 
-  .entry-title {
-    font-size: 2.8rem;
-  }
-}
 
-@media (max-width: 900px) {
-  .portfolio-showcase {
-    padding: 100px 20px;
-  }
-
-  .portfolio-header {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    margin-bottom: 80px;
-  }
-
-  .header-main-title {
-    font-size: 3rem;
-  }
-
-  .portfolio-entry,
-  .portfolio-entry:nth-child(even) {
-    grid-template-columns: 1fr;
-    direction: rtl;
-    gap: 40px;
-  }
-
-  .entry-visual-wrapper,
-  .entry-body {
-    grid-column: span 1;
-  }
-
-  .entry-body {
-    text-align: center;
-    padding: 0;
-  }
-
-  .entry-meta {
-    justify-content: center;
-  }
-
-  .entry-actions {
-    justify-content: center;
-    flex-direction: column;
-  }
-
-  .entry-btn-primary,
-  .entry-btn-secondary {
-    width: 100%;
-    justify-content: center;
-  }
-
-  .entry-title {
-    font-size: 2.2rem;
-  }
-}
-
-/* VIDEO MODAL STRUCTURE */
-
+/* ============================================================
+   VIDEO MODAL
+   ============================================================ */
 .video-modal {
   position: fixed;
   inset: 0;
@@ -1792,10 +1555,9 @@ section {
   justify-content: center;
 }
 
-/* ================= THEME – EDI LEVY ================= */
-
-/* ================= THEME ADAPTATIONS ================= */
-
+/* ============================================================
+   PORTFOLIO THEME ADAPTATIONS
+   ============================================================ */
 .portfolio-entry.theme-edi {
   --project-accent-color: #0f62fe;
   --project-accent-glow: rgba(15, 98, 254, 0.25);
@@ -1834,9 +1596,9 @@ section {
 
 
 
-/* ================================ */
-/* FAQ SECTION – MODERN CLEAN */
-/* ================================ */
+/* ============================================================
+   FAQ SECTION
+   ============================================================ */
 .faq-section {
   padding: var(--spacing-section) 20px;
   direction: rtl;
@@ -1939,15 +1701,14 @@ section {
 
 
 
-/* ================================ */
-/* CONTACT SECTION – MODERN PREMIUM */
-/* ================================ */
+/* ============================================================
+   CONTACT SECTION
+   ============================================================ */
 .contact-section {
   padding: var(--spacing-section) 20px;
   color: var(--color-text);
   font-family: var(--font-primary);
   direction: rtl;
-  background-color: var(--color-bg-light);
 }
 
 .contact-wrapper {
@@ -1960,7 +1721,7 @@ section {
   align-items: flex-start;
 }
 
-/* TEXT SIDE */
+/* Info Display */
 .contact-info {
   flex: 1 1 400px;
 }
@@ -2029,7 +1790,7 @@ section {
   box-shadow: var(--shadow-hover);
 }
 
-/* FORM SIDE */
+/* Form Card */
 .contact-card {
   flex: 1 1 450px;
   padding: 50px 40px;
@@ -2095,9 +1856,9 @@ textarea {
 }
 
 
-/* ============================= */
-/* FOOTER SECTION – DARK MODERN */
-/* ============================= */
+/* ============================================================
+   SITE FOOTER
+   ============================================================ */
 .site-footer {
   background: linear-gradient(180deg, var(--color-secondary), #01040a);
   color: #fff;
@@ -2284,6 +2045,9 @@ textarea {
   color: #ffffff;
 }
 
+/* ============================================================
+   ANIMATIONS & KEYFRAMES
+   ============================================================ */
 @keyframes fadeUp {
   0% {
     transform: translateY(30px);
@@ -2293,427 +2057,6 @@ textarea {
   100% {
     transform: translateY(0);
     opacity: 1;
-  }
-}
-
-
-/* ============================= */
-/* RESPONSIVE – UP TO 780PX      */
-/* ============================= */
-@media (max-width: 780px) {
-  .hamburger span {
-    display: flex;
-  }
-
-  .hamburger {
-    display: flex;
-    z-index: 1200;
-  }
-
-  .nav-links {
-    display: none;
-  }
-
-  .navbar {
-    justify-content: flex-end;
-  }
-
-  .hero {
-    margin-top: 40px;
-  }
-
-  .name {
-    font-size: 2.8rem;
-  }
-
-  .service {
-    font-size: 3.2rem;
-  }
-
-  .hero-desc {
-    font-size: 1.05rem;
-    line-height: 1.8;
-  }
-
-  .hero-actions {
-    gap: 16px;
-  }
-
-  .about-layout {
-    grid-template-columns: 1fr;
-    gap: 0;
-  }
-
-  /* התמונה כרקע */
-  .about-image-stack {
-    position: absolute;
-    inset: 0;
-    max-width: none;
-    aspect-ratio: auto;
-    z-index: 0;
-  }
-
-  .image-back {
-    display: none;
-  }
-
-  .image-front {
-    transform: none;
-    border-radius: 0;
-    box-shadow: none;
-    filter: grayscale(20%) brightness(0.55);
-    width: 100vw;
-  }
-
-  /* שכבת כהות */
-  .about-section::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(to bottom,
-        rgba(6, 16, 32, 0.4),
-        rgba(6, 16, 32, 0.4));
-    z-index: 1;
-  }
-
-  /* טקסט מעל התמונה */
-  .about-text {
-    position: relative;
-    z-index: 4;
-    padding: 100px 24px 120px;
-    max-width: none;
-  }
-
-  .about-title {
-    font-size: 2.2rem;
-    color: #ffffff;
-  }
-
-  .about-title span {
-    color: #abc8ff;
-    font-size: 140%;
-  }
-
-  .about-text p {
-    color: #e4ebf7;
-  }
-
-  .about-note {
-    color: #b9c7e6;
-  }
-
-  /* FACT HIGHLIGHT */
-  .highlight-inner {
-    font-size: 1rem;
-  }
-
-  .highlight-bar {
-    right: 10px;
-  }
-
-  /* SERVICES */
-  .services-section {
-    padding: 80px 20px;
-  }
-
-  .services-title {
-    font-size: 3rem;
-  }
-
-  .services-subtitle {
-    font-size: 1rem;
-    max-width: 90%;
-    margin-bottom: 40px;
-  }
-
-  .services-grid {
-    grid-template-columns: 1fr;
-    gap: 30px;
-  }
-
-  .service-card {
-    padding: 25px 20px;
-  }
-
-  .service-img-wrapper {
-    height: 150px;
-  }
-
-  .service-name {
-    font-size: 1.4rem;
-  }
-
-  .service-description {
-    font-size: 0.95rem;
-  }
-
-  .how-it-works .container {
-    flex-direction: column;
-    /* כל התוכן בקולון אחד */
-    align-items: center;
-    /* מרכז את הצדדים */
-    gap: 40px;
-    /* ריווח בין הטקסט לצעדים */
-  }
-
-  .how-steps {
-    grid-template-columns: 1fr;
-    /* רק עמודה אחת */
-    gap: 25px;
-    /* פחות ריווח בין הצעדים */
-    width: 100%;
-  }
-
-  .step {
-    padding: 20px 15px;
-    /* פחות padding בתוך הכרטיס */
-  }
-
-  .step-number {
-    width: 40px;
-    height: 40px;
-    line-height: 40px;
-    font-size: 1.1rem;
-  }
-
-  .works-icon {
-    font-size: 32px;
-    margin-bottom: 12px;
-  }
-
-  .step h3 {
-    font-size: 1.1rem;
-  }
-
-  .step p {
-    font-size: 0.9rem;
-  }
-
-  .how-text {
-    text-align: center;
-    /* הכותרת והטקסט במרכז */
-    gap: 20px;
-  }
-
-  .how-text h2 {
-    font-size: 3rem;
-    /* כותרת קטנה יותר */
-  }
-
-  .how-text p {
-    font-size: 0.95rem;
-    line-height: 1.5;
-  }
-
-  .cta-button {
-    padding: 12px 24px;
-    font-size: 0.95rem;
-    align-self: center;
-  }
-
-  /* PACKAGES */
-  .pricing-section,
-  .pricing-dark-section {
-    padding: 80px 15px;
-  }
-
-  .pricing-title {
-    font-size: 3rem;
-  }
-
-  .pricing-subtitle {
-    font-size: 0.95rem;
-    margin-bottom: 40px;
-  }
-
-  .pricing-grid {
-    grid-template-columns: 1fr;
-    gap: 30px;
-  }
-
-  .pricing-card {
-    padding: 30px 20px;
-  }
-
-  .package-name {
-    font-size: 1.4rem;
-  }
-
-  .package-price {
-    font-size: 1.8rem;
-    margin-bottom: 20px;
-  }
-
-  .package-features li {
-    font-size: 0.9rem;
-    margin: 8px 0;
-  }
-
-  .pricing-buttons {
-    gap: 12px;
-  }
-
-  .btn.packages {
-    width: 120px;
-  }
-
-  /* SECTION */
-  .projects-section {
-    padding: 60px 16px;
-    gap: 32px;
-  }
-
-  .projects-container {
-    display: flex;
-    flex-direction: column;
-    gap: 40px;
-  }
-
-  /* TITLE */
-  .section-header {
-    margin-bottom: 40px;
-  }
-
-  .section-title {
-    font-size: 32px;
-    line-height: 1.2;
-  }
-
-  .section-label {
-    font-size: 12px;
-    padding: 6px 14px;
-  }
-
-  .section-underline {
-    width: 40%;
-  }
-
-  /* CARD */
-  .project-card {
-    width: 100%;
-    padding: 30px 20px;
-    gap: 30px;
-    border-radius: 32px;
-  }
-
-  /* MEDIA */
-  .project-image {
-    width: 100%;
-    max-width: none;
-    height: 250px;
-  }
-
-  /* INFO */
-  .project-title {
-    font-size: 2rem;
-  }
-
-  .project-description {
-    font-size: 15px;
-    line-height: 1.7;
-  }
-
-  /* TAGS */
-  .project-tags {
-    gap: 10px;
-  }
-
-  .tag {
-    font-size: 12px;
-    padding: 6px 12px;
-  }
-
-  /* BUTTONS */
-  .project-actions {
-    flex-direction: column;
-    gap: 10px;
-    width: 100%;
-  }
-
-  .btn {
-    width: 100%;
-    padding: 14px;
-    font-size: 16px;
-    text-align: center;
-  }
-
-  /* VIDEO MODAL */
-  .video-modal {
-    align-items: flex-start;
-    padding-top: 90px;
-  }
-
-  .video-center {
-    width: 90%;
-    max-width: none;
-  }
-
-  .modal-close {
-    top: -55px;
-    right: 0;
-    width: 42px;
-    height: 42px;
-    font-size: 22px;
-  }
-
-  .faq-section {
-    padding: 60px 15px;
-    /* פחות מרווחים */
-  }
-
-  .faq-title {
-    font-size: 2.6rem;
-    /* כותרת קטנה יותר */
-    margin-bottom: 35px;
-  }
-
-  .faq-item {
-    margin-bottom: 15px;
-  }
-
-  .faq-question {
-    font-size: 16px;
-    /* פונטים קטנים יותר */
-    padding: 14px 20px;
-  }
-
-  .faq-arrow {
-    font-size: 18px;
-  }
-
-  .faq-answer {
-    padding: 0 20px;
-  }
-
-  .faq-answer p {
-    font-size: 14px;
-    line-height: 1.5;
-    margin: 12px 0;
-  }
-
-  .whatsapp-button {
-    width: 50px;
-    height: 50px;
-  }
-
-  .whatsapp-button img {
-    width: 28px;
-    height: 28px;
-  }
-
-
-  .footer-container {
-    grid-template-columns: 1fr;
-    gap: 2rem;
-  }
-
-  .footer-bottom {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .social-links {
-    justify-content: center;
   }
 }
 
@@ -2767,8 +2110,10 @@ textarea {
 }
 
 
-/* ===== Accessibility Widget - New Design ===== */
 
+/* ============================================================
+   ACCESSIBILITY WIDGET
+   ============================================================ */
 .accessibility-widget {
   position: fixed;
   bottom: 10px;
@@ -2911,7 +2256,6 @@ textarea {
   }
 }
 
-
 html.normal-text {
   font-size: 100%;
 }
@@ -2927,13 +2271,11 @@ html.larger-text {
 /* ===========================
    HIGH CONTRAST (BASIC MODE)
    =========================== */
-
 body.high-contrast {
   background: #000 !important;
   color: #fff !important;
 }
 
-/* טקסט */
 body.high-contrast p,
 body.high-contrast h1,
 body.high-contrast h2,
@@ -2947,7 +2289,6 @@ body.high-contrast label {
   color: #fff !important;
 }
 
-/* קופסאות */
 body.high-contrast div,
 body.high-contrast section,
 body.high-contrast article,
@@ -2958,7 +2299,6 @@ body.high-contrast footer {
   border: 1px solid #fff !important;
 }
 
-/* כפתורים */
 body.high-contrast button {
   background: #111 !important;
   color: #fff !important;
@@ -2970,26 +2310,20 @@ body.high-contrast button:hover {
   color: #000 !important;
 }
 
-/* קישורים */
 body.high-contrast a {
   color: #00e6ff !important;
   text-decoration: underline !important;
 }
 
-/* אייקונים */
 body.high-contrast i,
 body.high-contrast svg {
   color: #fff !important;
   fill: #fff !important;
 }
 
-
-
-/* ============================= */
-/* COOKIE CONSENT WIDGET STYLES */
-/* ============================= */
-
-/* ===== COOKIE BAR ===== */
+/* ============================================================
+   COOKIE CONSENT COMPONENT
+   ============================================================ */
 .cookie-bar {
   position: fixed;
   bottom: 10px;
@@ -3041,7 +2375,6 @@ body.high-contrast svg {
   flex-wrap: wrap;
 }
 
-/* ===== BUTTONS ===== */
 .cookie-btn {
   padding: 10px 20px;
   border-radius: 12px;
@@ -3088,7 +2421,6 @@ body.high-contrast svg {
   background: #e0e7ff;
 }
 
-/* ===== MODAL ===== */
 .cookie-modal {
   position: fixed;
   inset: 0;
@@ -3121,19 +2453,9 @@ body.high-contrast svg {
   color: #333;
 }
 
-/* ===== MOBILE ===== */
-@media (max-width: 600px) {
-  .cookie-actions {
-    flex-direction: column;
-  }
-
-  .cookie-btn {
-    width: 100%;
-  }
-}
-
-
-/* ================= PACKAGES BUTTONS & PRICES ================= */
+/* ============================================================
+   WHATSAPP FLOATING BUTTON
+   ============================================================ */
 .whatsapp-button {
   position: fixed;
   bottom: 10px;
@@ -3158,4 +2480,383 @@ body.high-contrast svg {
 .whatsapp-button:hover {
   transform: scale(1.1);
   box-shadow: 0 6px 10px rgba(0, 0, 0, 0.4);
+}
+
+/* ============================================================
+   MEDIA QUERIES (MOBILE RESPONSIVE)
+   ============================================================ */
+@media (max-width: 1100px) {
+
+  /* Portfolio Responsive (Title sizing) */
+  .header-main-title {
+    font-size: 4rem;
+  }
+
+  .entry-title {
+    font-size: 2.8rem;
+  }
+}
+
+@media (max-width: 900px) {
+
+  /* Navbar & Logo Fix */
+  .navbar {
+    justify-content: flex-end;
+    /* Pin logo to the left in RTL */
+    padding: 15px 30px;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+
+  .nav-links {
+    display: none;
+  }
+
+  /* Global Utility */
+  .cta-btn {
+    padding: 12px 28px;
+    font-size: 0.95rem;
+  }
+
+  /* Hero Section */
+  .hero-actions {
+    gap: 16px;
+  }
+
+  /* About Responsive */
+  .about-layout {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  .about-image-stack {
+    position: absolute;
+    inset: 0;
+    max-width: none;
+    aspect-ratio: auto;
+    z-index: 0;
+  }
+
+  .image-back {
+    display: none;
+  }
+
+  .image-front {
+    transform: none;
+    border-radius: 0;
+    box-shadow: none;
+    filter: grayscale(20%) brightness(0.55);
+    width: 100vw;
+  }
+
+  .about-section::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, rgba(6, 16, 32, 0.4), rgba(6, 16, 32, 0.4));
+    z-index: 1;
+  }
+
+  .about-text {
+    position: relative;
+    z-index: 4;
+    padding: 100px 24px 120px;
+    max-width: none;
+  }
+
+  .about-title {
+    font-size: 2.2rem;
+    color: #ffffff;
+  }
+
+  .about-title span {
+    color: #abc8ff;
+    font-size: 140%;
+  }
+
+  .about-text p {
+    color: #e4ebf7;
+  }
+
+  .about-note {
+    color: #b9c7e6;
+  }
+
+  /* Services Responsive */
+  .services-section {
+    padding: 80px 20px;
+  }
+
+  .services-title {
+    font-size: 3rem;
+  }
+
+  .services-subtitle {
+    font-size: 1rem;
+    max-width: 90%;
+    margin-bottom: 40px;
+  }
+
+  .services-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .service-card {
+    padding: 25px 20px;
+  }
+
+  .service-name {
+    font-size: 1.4rem;
+  }
+
+  .service-description {
+    font-size: 0.95rem;
+  }
+
+  .services-cta {
+    margin: 20px 0;
+    gap: 10px;
+  }
+
+  .services-cta .cta-text {
+    font-size: 1rem;
+  }
+
+  .services-cta .btn-main {
+    padding: 12px 28px;
+    font-size: 0.95rem;
+  }
+
+  /* Timeline Responsive */
+  .timeline-cta {
+    margin: 20px 0;
+    gap: 10px;
+  }
+
+  .timeline-cta .cta-text {
+    font-size: 1rem;
+  }
+
+  .timeline-cta .btn-main {
+    padding: 12px 28px;
+    font-size: 0.95rem;
+  }
+
+  /* Portfolio Showcase Responsive */
+  .portfolio-showcase {
+    padding: 100px 20px;
+  }
+
+  .portfolio-header {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 80px;
+  }
+
+  .header-main-title {
+    font-size: 3rem;
+  }
+
+  .portfolio-entry,
+  .portfolio-entry:nth-child(even) {
+    grid-template-columns: 1fr;
+    direction: rtl;
+    gap: 40px;
+  }
+
+  .entry-visual-wrapper,
+  .entry-body {
+    grid-column: span 1;
+  }
+
+  .entry-body {
+    text-align: center;
+    padding: 0;
+  }
+
+  .entry-meta {
+    justify-content: center;
+  }
+
+  .entry-actions {
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  .entry-btn-primary,
+  .entry-btn-secondary {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .entry-title {
+    font-size: 2.2rem;
+  }
+
+  .entry-image-container {
+    aspect-ratio: auto;
+    min-height: 250px;
+    border-radius: 12px;
+    margin-bottom: 20px;
+    position: relative;
+    z-index: 2;
+  }
+
+  .entry-image {
+    height: auto;
+    max-height: 500px;
+    width: 100%;
+    object-fit: contain;
+  }
+
+  .entry-visual-wrapper {
+    margin-bottom: 30px;
+  }
+
+  .entry-decorative-box {
+    display: block;
+    top: -15px;
+    right: -15px;
+    width: 100%;
+    height: 100%;
+    opacity: 0.1;
+  }
+
+  .portfolio-entry:hover .entry-decorative-box {
+    transform: translate(8px, 8px);
+    opacity: 0.25;
+  }
+
+  /* FAQ Responsive */
+  .faq-section {
+    padding: 60px 15px;
+  }
+
+  .faq-title {
+    font-size: 2.6rem;
+    margin-bottom: 35px;
+  }
+
+  .faq-item {
+    margin-bottom: 15px;
+  }
+
+  .faq-question {
+    font-size: 16px;
+    padding: 14px 20px;
+  }
+
+  .faq-arrow {
+    font-size: 18px;
+  }
+
+  .faq-answer {
+    padding: 0 20px;
+  }
+
+  .faq-answer p {
+    font-size: 14px;
+    line-height: 1.5;
+    margin: 12px 0;
+  }
+
+  /* Accessibility Widget Mobile */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* Cookie Consent Mobile */
+  .cookie-actions {
+    flex-direction: column;
+  }
+
+  .cookie-btn {
+    width: 100%;
+  }
+
+  /* Footer Responsive */
+  .footer-container {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .social-links {
+    justify-content: center;
+  }
+
+  .whatsapp-button {
+    width: 50px;
+    height: 50px;
+  }
+
+  .whatsapp-button img {
+    width: 28px;
+    height: 28px;
+  }
+}
+
+/* אנימציות כניסה עם גלילה */
+.animate-up,
+.animate-down,
+.animate-left,
+.animate-right {
+  opacity: 0;
+  transition: all 0.8s ease-out;
+}
+
+/* כניסה מעלה */
+.animate-up {
+  transform: translateY(50px);
+}
+
+.animate-up.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* כניסה למטה */
+.animate-down {
+  transform: translateY(-50px);
+}
+
+.animate-down.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* כניסה משמאל */
+.animate-left {
+  transform: translateX(50px);
+}
+
+.animate-left.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* כניסה מימין */
+.animate-right {
+  transform: translateX(-50px);
+}
+
+.animate-right.visible {
+  opacity: 1;
+  transform: translateX(0);
 }

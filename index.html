@@ -65,7 +65,7 @@
 
   <canvas id="particleCanvas"></canvas>
 
-  <!-- ✅ TOP NAVBAR -->
+  <!-- === NAVBAR === -->
   <header class="navbar">
     <nav class="nav-links">
       <a href="#home">בית</a>
@@ -105,12 +105,9 @@
 
   <div class="mobile-overlay"></div>
 
-  <!-- ============================= -->
-  <!-- HERO SECTION -->
-  <!-- ============================= -->
+  <!-- === HERO SECTION === -->
   <section class="hero" id="home">
     <div class="hero-inner">
-
       <h1 class="title">
         <span class="line name">
           רועי גוט<span class="dot dot1">.</span>
@@ -130,17 +127,10 @@
         <a href="#contact" class="btn-main">צור קשר</a>
         <a href="#projects" class="btn-link">פרוייקטים</a>
       </div>
-
     </div>
   </section>
 
-
-
-
-
-  <!-- ============================= -->
-  <!-- ABOUT WEBSBUIZ -->
-  <!-- ============================= -->
+  <!-- === ABOUT SECTION === -->
   <section class="about-section" id="about" loader="lazy">
     <div class="about-layout">
 
@@ -189,19 +179,9 @@
     </div>
   </section>
 
-
-
-
-
-
-
-
-
-  <!-- ============================= -->
-  <!-- WHY CHOOSE US -->
-  <!-- ============================= -->
+  <!-- === WHY CHOOSE US === -->
   <section class="why-choose" id="whyChooseUs" loader="lazy">
-    <h2>למה לבחור בנו לבניית אתר לעסק שלך ?</h2>
+    <h2>למה לבחור בנו לבניית אתר לעסק שלך?</h2>
     <div class="features-grid">
       <div class="feature-card animate-up">
         <div class="feature-icon">
@@ -247,7 +227,7 @@
   </section>
 
 
-  <!-- FACT SECTION -->
+  <!-- === HIGHLIGHT SECTION === -->
   <section class="highlight-section animate-up" loader="lazy">
     <div class="highlight-inner">
       <p>
@@ -262,17 +242,7 @@
     <a href="#contact" class="main-cta-btn">בוא נבנה לך אתר מקצועי</a>
 
   </section>
-
-
-
-
-
-
-
-
-  <!-- ============================= -->
-  <!-- SERVICES SECTION -->
-  <!-- ============================= -->
+  <!-- === SERVICES SECTION === -->
   <section class="services-section" id="services" loader="lazy">
     <div class="services-container">
 
@@ -361,13 +331,7 @@
 
     </div>
   </section>
-
-
-
-
-
-
-
+  <!-- === HOW IT WORKS (TIMELINE) === -->
   <section class="timeline-section" id="howItWorks" loader="lazy">
 
     <div class="timeline-header">
@@ -452,15 +416,7 @@
     </div>
 
 
-  </section>
-
-
-
-
-
-  <!-- ============================= -->
-  <!-- PRICING -->
-  <!-- ============================= -->
+  </section> <!-- === PRICING SECTION === -->
   <section class="pricing-section" id="packages" loader="lazy">
     <div class="pricing-wrapper">
       <h2 class="pricing-title">בחר את החבילה שמתאימה לך</h2>
@@ -535,13 +491,7 @@
 
       </div>
     </div>
-  </section>
-
-
-  <!-- ============================= -->
-  <!-- PROJECTS -->
-  <!-- ============================= -->
-
+  </section> <!-- === PROJECTS SECTION === -->
   <section id="projects" class="portfolio-showcase" loader="lazy">
     <div class="portfolio-inner">
 
@@ -600,7 +550,7 @@
           </div>
         </article>
 
-        <!-- ================= PROJECT ITEM 2 ================= -->
+        <!-- === PROJECT ITEM 2 === -->
         <article class="portfolio-entry theme-feminine animate-up">
           <div class="entry-visual-wrapper">
             <div class="entry-image-container">
@@ -645,7 +595,7 @@
       </div>
     </div>
 
-    <!-- ================= VIDEO MODAL ================= -->
+    <!-- === VIDEO MODAL === -->
     <div id="videoModal" class="video-modal" aria-hidden="true">
       <div class="video-center">
         <button class="modal-close" id="closeVideoBtn">✕</button>
@@ -658,19 +608,7 @@
 
   </section>
 
-
-
-
-
-
-
-
-
-
-
-  <!-- ============================= -->
-  <!-- FAQ -->
-  <!-- ============================= -->
+  <!-- === FAQ SECTION === -->
   <section class="faq-section" id="FAQ" loader="lazy">
     <div class="faq-wrapper">
       <h2 class="faq-title">שאלות נפוצות</h2>
@@ -750,15 +688,7 @@
 
     </div>
   </section>
-
-
-
-
-
-
-  <!-- ============================= -->
-  <!-- CONTACT -->
-  <!-- ============================= -->
+  <!-- === CONTACT SECTION === -->
   <section id="contact" class="contact-section" loader="lazy">
     <div class="contact-wrapper">
 
@@ -808,9 +738,7 @@
 
     </div>
   </section>
-
-
-
+  <!-- === ACCESSIBILITY WIDGET === -->
   <div class="accessibility-widget">
 
     <!-- כפתור פתיחה -->
@@ -846,6 +774,7 @@
   </div>
 
 
+  <!-- === FOOTER === -->
   <footer class="site-footer" id="contact">
 
     <div class="footer-container">
@@ -906,20 +835,20 @@
 
   </footer>
 
-  <!-- COOKIE BAR -->
+  <!-- === COOKIE BAR === -->
   <div class="cookie-bar" id="cookieBar">
     <div class="cookie-header">🍪 שימוש בעוגיות</div>
     <div class="cookie-text">
       האתר משתמש בעוגיות לשיפור חוויית המשתמש וניתוח סטטיסטי.
     </div>
     <div class="cookie-actions">
-      <button class="cookie-btn btn-accept" onclick="acceptAll()">קבל הכל</button>
-      <button class="cookie-btn btn-reject" onclick="rejectAll()">דחה</button>
-      <button class="cookie-btn btn-settings" onclick="openSettings()">הגדרות</button>
+      <button class="cookie-btn btn-accept" onclick="acceptAllCookies()">קבל הכל</button>
+      <button class="cookie-btn btn-reject" onclick="rejectAllCookies()">דחה</button>
+      <button class="cookie-btn btn-settings" onclick="openCookieSettings()">הגדרות</button>
     </div>
   </div>
 
-  <!-- SETTINGS MODAL -->
+  <!-- === COOKIE SETTINGS MODAL === -->
   <div class="cookie-modal" id="cookieModal">
     <div class="cookie-modal-content">
       <h3 style="color:#00e5ff;margin-top:0">העדפות עוגיות</h3>
@@ -934,13 +863,13 @@
         <input type="checkbox" id="analyticsCheckbox">
       </div>
 
-      <button class="cookie-btn btn-accept" onclick="savePreferences()">
+      <button class="cookie-btn btn-accept" onclick="saveCookiePreferences()">
         שמור העדפות
       </button>
     </div>
   </div>
 
-  <!-- WhatsApp Floating Button -->
+  <!-- === WHATSAPP FLOATING BUTTON === -->
   <a href="https://wa.me/972547019909" target="_blank" class="whatsapp-button">
     <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" />
   </a>
