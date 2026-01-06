@@ -2495,6 +2495,7 @@ body.high-contrast svg {
   .entry-title {
     font-size: 2.8rem;
   }
+
   .entry-description {
     font-size: 1.1rem;
     text-align: right;
@@ -2524,9 +2525,31 @@ body.high-contrast svg {
     font-size: 0.95rem;
   }
 
+  .name {
+    font-size: 2.8rem;
+  }
+
+  .service {
+    font-size: 3.4rem;
+  }
+
   /* Hero Section */
   .hero-actions {
     gap: 16px;
+  }
+
+  .hero-desc {
+    font-size: 1.1rem;
+  }
+
+  .btn-main {
+    padding: 12px 28px;
+    font-size: 1rem;
+  }
+
+  .btn-link {
+    font-size: 1rem;
+    padding: 12px 28px;
   }
 
   /* About Responsive */
