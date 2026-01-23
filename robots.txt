@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+
+# למנועי חיפוש
+Sitemap: https://websbuiz.com/sitemap.xml
+
+# אם בעתיד יש דפי admin או tmp:
+# Disallow: /admin/
+# Disallow: /tmp/
