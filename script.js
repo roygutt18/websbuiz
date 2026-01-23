@@ -361,7 +361,6 @@ function loadGoogleAnalytics() {
 
 
 
-
 /* ============================================================
    FORM SUBMISSION (EmailJS Integration)
    ============================================================ */
@@ -393,5 +392,3 @@ function handleFormSubmit(formSelector, statusSelector) {
 // Initialize form handlers
 handleFormSubmit(".contact-card", "#formStatus");
 handleFormSubmit(".footer-form", ".footer-form-note");
-
-
