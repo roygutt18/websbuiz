@@ -28,6 +28,58 @@
   --transition-smooth: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   --transition-premium: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
   --transition-spring: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+  --announcement-height: 50px;
+}
+
+@media (max-width: 768px) {
+  :root {
+    --announcement-height: 44px;
+  }
+}
+
+/* ============================================================
+   ANNOUNCEMENT BAR
+   ============================================================ */
+.announcement-bar {
+  background: linear-gradient(90deg, rgba(11, 92, 255, 0.9), rgba(0, 31, 77, 0.9));
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: var(--announcement-height);
+  z-index: 2200;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  color: #fff;
+  font-weight: 500;
+  font-size: 0.95rem;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transition: var(--transition-smooth);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.announcement-bar:hover {
+  filter: brightness(1.1);
+}
+
+.announcement-text {
+  letter-spacing: 0.2px;
+  line-height: 1.2;
+}
+
+@media (max-width: 768px) {
+  .announcement-bar {
+    padding: 0 15px;
+    font-size: 0.85rem;
+  }
+
+  .announcement-text {
+    max-width: 90%;
+  }
 }
 
 /* ============================================================
@@ -65,7 +117,7 @@ section {
    ============================================================ */
 .navbar {
   position: fixed;
-  top: 0;
+  top: var(--announcement-height);
   width: 100%;
   padding: 20px 60px;
   display: flex;
@@ -149,7 +201,7 @@ section {
   height: 24px;
   cursor: pointer;
   position: fixed;
-  top: 30px;
+  top: calc(var(--announcement-height) + 15px);
   right: 40px;
   z-index: 2000;
   transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
@@ -192,7 +244,7 @@ section {
 
 .mobile-menu {
   position: fixed;
-  top: 0;
+  top: var(--announcement-height);
   /* Start fully hidden */
   right: -320px;
   width: 300px;
@@ -1319,9 +1371,69 @@ section {
   border-color: rgba(11, 92, 255, 0.1);
 }
 
+/* Professional Floating Badges & Premium Cards */
+.pricing-card {
+  position: relative;
+  /* Essential for floating badges */
+  transition: var(--transition-premium);
+}
+
+.pricing-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 30px 60px -15px rgba(0, 0, 0, 0.1);
+}
+
+.pricing-card.founders-edition {
+  border: 1px solid var(--color-primary);
+  box-shadow: 0 20px 40px -10px rgba(11, 92, 255, 0.15);
+  background: linear-gradient(180deg, #ffffff 0%, #f8faff 100%);
+}
+
+.pricing-card.founders-edition:hover {
+  box-shadow: 0 30px 60px -15px rgba(11, 92, 255, 0.25);
+}
+
+/* Updated Floating Badge Design */
+.pricing-badge {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #ffffff;
+  color: var(--color-primary);
+  padding: 6px 18px;
+  font-size: 0.8rem;
+  font-weight: 900;
+  border-radius: 50px;
+  border: 1px solid #004985;
+  box-shadow: 0 0 15px rgba(0, 119, 255, 0.3);
+  z-index: 10;
+  white-space: nowrap;
+  letter-spacing: 0.5px;
+}
+
+.pricing-condition {
+  font-size: 0.75rem;
+  color: var(--color-text-light);
+  margin-top: 15px;
+  font-style: italic;
+  text-align: center;
+  opacity: 0.8;
+}
+
 .pricing-card.popular {
   border: 2px solid var(--color-primary);
-  box-shadow: var(--shadow-hover);
+  transform: scale(1.05);
+  /* Base scale for popular tier */
+}
+
+.pricing-card.popular:hover {
+  transform: translateY(-10px) scale(1.07);
+}
+
+.pricing-card.popular .pricing-badge {
+  border-color: var(--color-primary);
+  box-shadow: 0 0 15px rgba(11, 92, 255, 0.2);
 }
 
 /* Package Texts */
@@ -1624,6 +1736,28 @@ section {
   background: var(--color-bg-light);
   color: var(--color-text-light);
   border-radius: 2px;
+}
+
+.ready-tag {
+  font-size: 11px;
+  font-weight: 700;
+  padding: 4px 10px;
+  background: rgba(11, 92, 255, 0.05);
+  color: var(--color-primary);
+  border: 1px solid rgba(11, 92, 255, 0.1);
+  border-radius: 4px;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.ready-tag::before {
+  content: "";
+  width: 6px;
+  height: 6px;
+  background: var(--color-primary);
+  border-radius: 50%;
+  display: inline-block;
 }
 
 .entry-title {
