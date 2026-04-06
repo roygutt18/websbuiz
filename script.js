@@ -361,34 +361,3 @@ function loadGoogleAnalytics() {
 
 
 
-/* ============================================================
-   FORM SUBMISSION (EmailJS Integration)
-   ============================================================ */
-emailjs.init("SwP5gNyPiaOwSkX2q");
-
-function handleFormSubmit(formSelector, statusSelector) {
-  const form = document.querySelector(formSelector);
-  const status = document.querySelector(statusSelector);
-  if (!form || !status) return;
-
-  status.textContent = "";
-
-  form.addEventListener("submit", function (e) {
-    e.preventDefault();
-
-    emailjs.sendForm("service_w5e5zyw", "template_vl96hr9", form)
-      .then(() => {
-        status.textContent = "ההודעה נשלחה בהצלחה!";
-        status.style.color = "green";
-        form.reset();
-      }, (error) => {
-        status.textContent = "שגיאה בשליחת ההודעה. נסה שוב.";
-        status.style.color = "red";
-        console.error(error);
-      });
-  });
-}
-
-// Initialize form handlers
-handleFormSubmit(".contact-card", "#formStatus");
-handleFormSubmit(".footer-form", ".footer-form-note");
